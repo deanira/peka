@@ -1,4 +1,4 @@
-package com.pinus.pakis.ui.main.dashboard
+package com.pinus.pakis.ui.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

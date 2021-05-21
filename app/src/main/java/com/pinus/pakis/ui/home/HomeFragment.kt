@@ -1,4 +1,4 @@
-package com.pinus.pakis.ui.main.home
+package com.pinus.pakis.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

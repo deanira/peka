@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pinus.pakis.databinding.ActivitySigninBinding
-import com.pinus.pakis.ui.main.MainActivity
 
 class SigninActivity : AppCompatActivity() {
 
