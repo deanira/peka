@@ -77,10 +77,10 @@
         android:layout_height="wrap_content"
         android:text="@string/sudah_punya_akun"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_masuk"
         app:layout_constraintTop_toBottomOf="@+id/btn_daftar"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintVertical_bias="0.26" />
 
     <TextView
@@ -89,10 +89,12 @@
         android:layout_height="wrap_content"
         android:text="@string/masuk"
         android:textColor="@color/main_blue"
+        android:layout_marginStart="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintLeft_toRightOf="@id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/btn_daftar"
         app:layout_constraintVertical_bias="0.25" />
 
