@@ -42,7 +42,7 @@
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/main_grey"
+            android:backgroundTint="@color/white"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress" />
@@ -65,7 +65,7 @@
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/main_grey"
+            android:backgroundTint="@color/white"
             android:ems="10"
             android:hint="@string/password"
             app:layout_constraintBottom_toBottomOf="parent"
