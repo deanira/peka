@@ -39,13 +39,13 @@
         app:layout_constraintWidth_percent=".9">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_name"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@color/main_grey"
             android:ems="10"
-            android:hint="@string/nama"
-            android:inputType="textPersonName" />
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +75,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_masuk"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/rounded_button"
@@ -97,7 +97,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/btn_masuk"
         app:layout_constraintVertical_bias="0.06999999" />
 
     <TextView

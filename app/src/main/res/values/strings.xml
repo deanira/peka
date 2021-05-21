@@ -7,4 +7,10 @@
     <string name="lupa_password">Lupa Password?</string>
     <string name="password">Password</string>
     <string name="nama">Nama</string>
+    <string name="email">Email</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
