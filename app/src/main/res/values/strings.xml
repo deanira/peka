@@ -38,4 +38,12 @@
         <item>@string/parenting_motivation_1</item>
         <item>@string/parenting_motivation_2</item>
     </string-array>
+    <string name="keluar">Keluar</string>
+    <string name="tentang_kami">Tentang Kami</string>
+    <string name="akun">Akun</string>
+    <string name="Profile">Profile</string>
+    <string name="ubah_password">Ubah Password</string>
+    <string name="old_password">Password Lama</string>
+    <string name="new_password">Password Baru</string>
+    <string name="new_password_confirm">Konfirmasi Password Baru</string>
 </resources>

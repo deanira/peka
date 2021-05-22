@@ -12,6 +12,7 @@
         <activity android:name=".ui.IntroductoryActivity" />
         <activity android:name=".ui.GoPremiumActivity" />
         <activity android:name=".ui.SignupSigninActivity" />
+        <activity android:name=".ui.account.Account"/>
         <activity android:name=".ui.SignupActivity" />
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
