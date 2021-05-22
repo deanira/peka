@@ -1,5 +1,6 @@
 package com.pinus.pakis.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.pinus.pakis.databinding.FragmentHomeBinding
+import com.pinus.pakis.ui.GoPremiumActivity
 
 class HomeFragment : Fragment() {
 
@@ -35,6 +37,15 @@ class HomeFragment : Fragment() {
             textView.text = it
         })
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnKuisioner.setOnClickListener {
+            val intent = Intent(context, GoPremiumActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {
