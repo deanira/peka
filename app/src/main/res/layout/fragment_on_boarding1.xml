@@ -31,15 +31,32 @@
         app:layout_constraintWidth_percent="0.7" />
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/helvetica_neue_light"
-        android:text=""
+        android:lineSpacingMultiplier="1.5"
+        android:text="@string/title_on_boarding_1"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="@id/iv_on_boarding"
         app:layout_constraintTop_toBottomOf="@id/iv_on_boarding"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.04" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica_neue_light"
+        android:justificationMode="inter_word"
+        android:lineSpacingMultiplier="1.5"
+        android:text="@string/subtitle_on_boarding_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/iv_on_boarding"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@id/iv_on_boarding"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintVertical_bias="0.04" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

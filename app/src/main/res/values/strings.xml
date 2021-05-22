@@ -18,4 +18,10 @@
     <string name="buat_akun">Buat Akun</string>
     <string name="skip">Skip</string>
     <string name="next">Next</string>
+    <string name="subtitle_on_boarding_1">Pola Asuh yang dari psikolog profesioal secara terpercaya, nyaman dan terjakau</string>
+    <string name="title_on_boarding_1">Survive? Nudge? Tricks?</string>
+    <string name="title_on_boarding_2">Pola Asuh yang terbaik untuk Anakmu</string>
+    <string name="subtitle_on_boarding_2">Kami akan menyimpulkan pertanyaanmu dengan tipe pola asuh yang sesuai dengan karakter anak. Jika kamu merasa kurang cocok kamibisa menghubugkanmu dengan psikolog kapan saja.</string>
+    <string name="title_on_boarding_3">Tingkatkan Pengetahuanmu</string>
+    <string name="subtitle_on_boarding_3">Gunakan journal PINUS untuk mengetahui lebih dalam Modern Parenting Dynamics</string>
 </resources>
