@@ -24,4 +24,18 @@
     <string name="subtitle_on_boarding_2">Kami akan menyimpulkan pertanyaanmu dengan tipe pola asuh yang sesuai dengan karakter anak. Jika kamu merasa kurang cocok kamibisa menghubugkanmu dengan psikolog kapan saja.</string>
     <string name="title_on_boarding_3">Tingkatkan Pengetahuanmu</string>
     <string name="subtitle_on_boarding_3">Gunakan journal PINUS untuk mengetahui lebih dalam Modern Parenting Dynamics</string>
+    <string name="mulai_kuisioner">Penasaran dengan parenting stylemu?<br /> Cek disini</string>
+
+    <string name="parenting_motivation_1">Jangan lupa berkomunikasi dengan anakmu hari ini</string>
+    <string name="parenting_motivation_2">Selalu pestikan bahwa anakmu merasakan kasih sayang orang tua</string>
+    <string name="daily_parenting_motivation">Daily Parenting Motivation</string>
+    <string name="app_name_stand_for">Peduli Karakter Anak Indonesia</string>
+    <string name="konsultasi_dengan_psikolog">Konsultasi dengan psikolog</string>
+    <string name="subtitle_go_premium">Konsultasi one-to-one dengan psikolog langsung aplikasi</string>
+    <string name="beli_paket">Beli Paket Sekarang<br /> Hanya 100.000/minggu</string>
+
+    <string-array name="parenting_motivation">
+        <item>@string/parenting_motivation_1</item>
+        <item>@string/parenting_motivation_2</item>
+    </string-array>
 </resources>
