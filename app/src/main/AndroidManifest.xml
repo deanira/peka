@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pakis">
+        <activity android:name=".ui.SignupSigninActivity" />
         <activity android:name=".ui.SignupActivity" />
-        <activity android:name=".ui.SignupSigninActivity">
+        <activity android:name=".ui.IntroductoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
