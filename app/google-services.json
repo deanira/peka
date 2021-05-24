@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430243274845",
+    "project_id": "inner-lightning-313406",
+    "storage_bucket": "inner-lightning-313406.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430243274845:android:ee77519484fb1d665b2db4",
+        "android_client_info": {
+          "package_name": "com.pinus.pakis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430243274845-ktaqqn0krd3ajdpo7nlkt99iadi97rnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyaJdOcvZFCs4P31AaFSgOxE6LA9FJmHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430243274845-ktaqqn0krd3ajdpo7nlkt99iadi97rnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
