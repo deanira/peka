@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SignupActivity">
+    tools:context=".ui.auth.SignupActivity">
 
     <TextView
         android:id="@+id/tv_buat_akun"
@@ -19,33 +19,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/material_et_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_buat_akun"
-        app:layout_constraintWidth_percent=".9">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:backgroundTint="@color/white"
-            android:ems="10"
-            android:hint="@string/nama"
-            android:inputType="textPersonName" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/material_et_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/material_et_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_buat_akun"
         app:layout_constraintWidth_percent=".9">
 
         <com.google.android.material.textfield.TextInputEditText

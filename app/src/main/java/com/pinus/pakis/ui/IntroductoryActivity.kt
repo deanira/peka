@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.cuberto.liquid_swipe.LiquidPager
 import com.pinus.pakis.databinding.ActivityIntroductoryBinding
 import com.pinus.pakis.ui.onboarding.OnBoardingFragment1
 import com.pinus.pakis.ui.onboarding.OnBoardingFragment2

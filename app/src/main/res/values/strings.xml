@@ -55,4 +55,6 @@
     <string name="last_name">Last Name</string>
     <string name="last_name_dummy">Purmodinata</string>
     <string name="email_dummmy">mirandaPurmodinata@gmail.com</string>
+    <string name="kami_memanggilmu">Kami memanggilmu?</string>
+    <string name="selanjutnya">Selanjutnya</string>
 </resources>

@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pakis">
+        <activity android:name=".ui.auth.SetNameActivity"></activity>
         <activity android:name=".ui.questions.QuestionActivity" />
         <activity android:name=".ui.profile_account.ProfileAccountActivity" />
         <activity android:name=".ui.WebviewActivity" />
