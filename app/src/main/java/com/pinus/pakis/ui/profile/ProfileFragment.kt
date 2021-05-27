@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.pinus.pakis.databinding.FragmentProfileBinding
 import com.pinus.pakis.ui.account.Account
+import com.pinus.pakis.ui.profile_account.ProfileAccountActivity
 
 class ProfileFragment : Fragment() {
 
@@ -37,13 +36,25 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvProfile.setOnClickListener {
-            val intent = Intent(context, Account::class.java)
-            startActivity(intent)
-        }
+        clickItem()
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun clickItem() {
+        with(binding) {
+            tvProfile.setOnClickListener {
+                val intent = Intent(context, Account::class.java)
+                startActivity(intent)
+            }
+
+            tvAkun.setOnClickListener {
+                val intent = Intent(context, ProfileAccountActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }

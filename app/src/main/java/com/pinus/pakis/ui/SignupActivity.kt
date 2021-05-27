@@ -3,21 +3,27 @@ package com.pinus.pakis.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.database.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.pinus.pakis.databinding.ActivitySignupBinding
 import com.pinus.pakis.model.OrangTua
+
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
     private lateinit var ref: DatabaseReference
+    var mFirebaseAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mFirebaseAuth = FirebaseAuth.getInstance()
 
         supportActionBar?.hide()
 
@@ -60,13 +66,25 @@ class SignupActivity : AppCompatActivity() {
                 Log.d("halo", "tes firebase")
                 val orangTuaId = ref.push().key
                 val orangTua = OrangTua(orangTuaId!!, nama, email, password)
-
-                ref.child(orangTuaId).setValue(orangTua).addOnCompleteListener {
-                    Snackbar.make(root, "Akun anda berhasil dibuat", Snackbar.LENGTH_SHORT).show()
-
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
-                }
+                mFirebaseAuth!!.createUserWithEmailAndPassword(orangTua.email, orangTua.password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                applicationContext,
+                                "Berhasil Membuat Akun",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            finish()
+                            startActivity(Intent(this@SignupActivity,SigninActivity::class.java))
+                        } else {
+                            Toast.makeText(
+                                applicationContext,
+                                "Gagal Membuat Akun",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
+                        }
+                    }
             }
         }
     }

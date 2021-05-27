@@ -10,8 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pakis">
+        <activity android:name=".ui.questions.QuestionActivity" />
+        <activity android:name=".ui.profile_account.ProfileAccountActivity" />
         <activity android:name=".ui.WebviewActivity" />
-        <activity android:name=".ui.IntroductoryActivity" />
+        <activity
+            android:name=".ui.IntroductoryActivity"
+            android:noHistory="true" />
         <activity android:name=".ui.GoPremiumActivity" />
         <activity android:name=".ui.SignupSigninActivity" />
         <activity android:name=".ui.account.Account" />
