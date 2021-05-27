@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pakis">
-        <activity android:name=".ui.auth.SetNameActivity"></activity>
+        <activity android:name=".ui.auth.SetNameActivity" />
         <activity android:name=".ui.questions.QuestionActivity" />
         <activity android:name=".ui.profile_account.ProfileAccountActivity" />
         <activity android:name=".ui.WebviewActivity" />
@@ -18,7 +18,7 @@
             android:name=".ui.IntroductoryActivity"
             android:noHistory="true" />
         <activity android:name=".ui.GoPremiumActivity" />
-        <activity android:name=".ui.SignupSigninActivity" />
+        <activity android:name=".ui.auth.SignupSigninActivity" />
         <activity android:name=".ui.account.Account" />
         <activity android:name=".ui.SignupActivity" />
         <activity
@@ -33,7 +33,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/Theme.Pakis.NoActionBar" />
-        <activity android:name=".ui.SigninActivity" />
+        <activity android:name=".ui.auth.SigninActivity" />
     </application>
 
 </manifest>

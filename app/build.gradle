@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -60,6 +61,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
-
+    implementation 'com.google.firebase:firebase-auth-ktx'
     implementation "com.quickbirdstudios:surveykit:1.1.0"
 }

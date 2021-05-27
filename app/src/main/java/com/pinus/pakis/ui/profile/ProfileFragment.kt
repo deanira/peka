@@ -7,14 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.databinding.FragmentProfileBinding
 import com.pinus.pakis.ui.account.Account
+import com.pinus.pakis.ui.auth.SignupSigninActivity
 import com.pinus.pakis.ui.profile_account.ProfileAccountActivity
 
 class ProfileFragment : Fragment() {
 
     private lateinit var profileViewModel: ProfileViewModel
     private var _binding: FragmentProfileBinding? = null
+    private lateinit var auth: FirebaseAuth
+    private lateinit var user: FirebaseUser
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -36,6 +43,8 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        auth = Firebase.auth
+        user = auth.currentUser!!
         clickItem()
     }
 
@@ -54,6 +63,12 @@ class ProfileFragment : Fragment() {
             tvAkun.setOnClickListener {
                 val intent = Intent(context, ProfileAccountActivity::class.java)
                 startActivity(intent)
+            }
+            tvKeluar.setOnClickListener {
+                auth.signOut()
+                val intent = Intent(context, SignupSigninActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
+                startActivity(intent);
             }
         }
     }
