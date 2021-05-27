@@ -13,7 +13,9 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.R
 import com.pinus.pakis.ui.auth.SignupSigninActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
