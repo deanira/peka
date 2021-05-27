@@ -1,10 +1,14 @@
 package com.pinus.pakis.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class OrangTua(
-    val id: String?,
-    val nama: String,
-    val email: String,
-    val password: String
-) {
+    var id: String?,
+    var nama: String,
+    var email: String,
+    var password: String
+): Parcelable {
     constructor(): this("", "", "", "")
 }
