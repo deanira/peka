@@ -6,6 +6,19 @@
     android:background="@color/main_blue">
 
     <TextView
+        android:id="@+id/tv_peka"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="34dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,9 +48,8 @@
         android:id="@+id/tv_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:lineSpacingMultiplier="1.5"
+        android:lineSpacingMultiplier="1.1"
         android:text="@string/title_on_boarding_2"
-        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +57,7 @@
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="@id/iv_on_boarding"
         app:layout_constraintTop_toBottomOf="@id/iv_on_boarding"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.32999998" />
 
     <TextView
         android:layout_width="0dp"
@@ -60,6 +72,6 @@
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="@id/iv_on_boarding"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.110000014"  />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

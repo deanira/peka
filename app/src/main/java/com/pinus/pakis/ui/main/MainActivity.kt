@@ -1,4 +1,4 @@
-package com.pinus.pakis.ui
+package com.pinus.pakis.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

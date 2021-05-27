@@ -1,9 +1,10 @@
-package com.pinus.pakis.ui
+package com.pinus.pakis.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pinus.pakis.databinding.ActivitySplashBinding
+import com.pinus.pakis.ui.IntroductoryActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -23,8 +24,6 @@ class SplashActivity : AppCompatActivity() {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
-
-
 
         supportActionBar?.hide()
     }

@@ -18,7 +18,7 @@
         <activity android:name=".ui.account.Account" />
         <activity android:name=".ui.auth.SignupActivity" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.splash.SplashActivity"
             android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:theme="@style/Theme.Pakis.NoActionBar" />
         <activity android:name=".ui.auth.SigninActivity" />
     </application>

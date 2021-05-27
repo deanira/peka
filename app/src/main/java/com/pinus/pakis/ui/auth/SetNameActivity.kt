@@ -9,7 +9,7 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.databinding.ActivitySetNameBinding
-import com.pinus.pakis.ui.MainActivity
+import com.pinus.pakis.ui.main.MainActivity
 
 class SetNameActivity : AppCompatActivity() {
 
