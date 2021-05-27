@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pinus.pakis.databinding.FragmentOnBoarding1Binding
-import com.pinus.pakis.ui.SignupSigninActivity
+import com.pinus.pakis.ui.auth.SignupSigninActivity
 
 class OnBoardingFragment1 : Fragment() {
 

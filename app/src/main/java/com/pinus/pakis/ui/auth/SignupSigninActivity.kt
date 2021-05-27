@@ -1,4 +1,4 @@
-package com.pinus.pakis.ui
+package com.pinus.pakis.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
