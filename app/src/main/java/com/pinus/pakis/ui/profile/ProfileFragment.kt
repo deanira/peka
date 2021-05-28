@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.pinus.pakis.databinding.FragmentProfileBinding
+import com.pinus.pakis.ui.aboutus.AboutUsActivity
 import com.pinus.pakis.ui.account.Account
 
 class ProfileFragment : Fragment() {
@@ -35,11 +36,16 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvProfile.setOnClickListener {
+        binding.tvAkun.setOnClickListener {
             val intent = Intent(context, Account::class.java)
             startActivity(intent)
         }
+        binding.tvTentangKami.setOnClickListener {
+            val intent = Intent(context, AboutUsActivity::class.java)
+            startActivity(intent)
+        }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

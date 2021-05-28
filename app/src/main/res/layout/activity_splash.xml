@@ -34,5 +34,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_pakis" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/copyright"
+        android:textAlignment="center"
+        android:fontFamily="@font/helvetica_neue_light"
+        android:textColor="@color/white"
+        android:layout_marginBottom="8dp"
+        android:paddingHorizontal="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

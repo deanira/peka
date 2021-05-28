@@ -40,7 +40,7 @@
     </string-array>
     <string name="keluar">Keluar</string>
     <string name="tentang_kami">Tentang Kami</string>
-    <string name="akun">Akun</string>
+    <string name="pengaturan_akun">Pengaturan Akun</string>
     <string name="Profile">Profile</string>
     <string name="ubah_password">Ubah Password</string>
     <string name="old_password">Password Lama</string>
@@ -54,4 +54,18 @@
     <string name="selanjutnya">Selanjutnya</string>
     <string name="splash_subtitle">Ribuan orang tua sudah menggunakan PEKA sebagai langkah awal mereka menjadi orang tua yang baik</string>
     <string name="splash_title">Mulai langkahmu menjadi Orang Tua yang baik sekarang</string>
+    <string name="about_us">PEKA (Peduli Karakter Anak Indonesia) - Anak merupakan generasi penerus bangsa. Mendidik anak merupakan tanggung jawab orang tua yang tidak mudah. Agar anak bisa tumbuh dan berkembang menjadi individu yang baik, pola asuh yang diterapkan pun juga harus baik. Sayangnya, banyak orang tua yang belum terlalu paham mengenai hal ini. Beberapa orang menganggap anak dengan perilaku yang buruk adalah ulah mereka sendiri. Padahal, pola asuh orang tua lah yang sangat berperan penting dalam membentuk karakter anak.</string>
+    <string name="about_us_2">Dari penjabaran masalah di atas, kami TIM PINUS bersama - sama berusaha meningkatkan kesadaran orang tua terhadap permasalahan Pola Asuh anak yang tepat sehingga dapat berdampak pada peningkatan kualitas karakter anak bangsa.</string>
+    <string name="meet_the_team">Meet The Team</string>
+    <string name="dea">Dea</string>
+    <string name="aziz">Aziz</string>
+    <string name="mobile_development">Android Developer</string>
+    <string name="akun">Akun</string>
+    <string name="alfandi">Alfandi</string>
+    <string name="marya">Marya</string>
+    <string name="william">William</string>
+    <string name="maikel">Maikel</string>
+    <string name="copyright">&#169; 2021 All Rights Reserved Terms of Use and Privacy Policy by PINUS</string>
+    <string name="machine_learning_engineer">Machine Learning Engineer</string>
+    <string name="cloud_computing_engineer">Cloud Computing Engineer</string>
 </resources>
