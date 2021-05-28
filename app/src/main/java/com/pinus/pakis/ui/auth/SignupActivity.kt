@@ -3,6 +3,7 @@ package com.pinus.pakis.ui.auth
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
@@ -28,6 +29,7 @@ class SignupActivity : AppCompatActivity() {
         auth = Firebase.auth
 
         binding.btnDaftar.setOnClickListener {
+            isLoading(true)
             signUp()
         }
 
@@ -59,6 +61,7 @@ class SignupActivity : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this@SignupActivity) { task ->
                         if (task.isSuccessful) {
+                            isLoading(false)
                             // Sign in success, update UI with the signed-in user's information
                             Snackbar.make(root, "Akun anda berhasil dibuat", Snackbar.LENGTH_SHORT)
                                 .show()
@@ -69,6 +72,7 @@ class SignupActivity : AppCompatActivity() {
                             val intent = Intent(applicationContext, SigninActivity::class.java)
                             startActivity(intent)
                         } else {
+                            isLoading(false)
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.exception)
                             Toast.makeText(
@@ -79,6 +83,16 @@ class SignupActivity : AppCompatActivity() {
                         }
                     }
             }
+        }
+    }
+
+    private fun isLoading(state: Boolean) {
+        if (state) {
+            binding.btnDaftar.visibility = View.INVISIBLE
+            binding.pbDaftar.visibility = View.VISIBLE
+        } else {
+            binding.btnDaftar.visibility = View.VISIBLE
+            binding.pbDaftar.visibility = View.INVISIBLE
         }
     }
 

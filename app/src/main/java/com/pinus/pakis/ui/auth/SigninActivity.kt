@@ -2,6 +2,7 @@ package com.pinus.pakis.ui.auth
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -24,20 +25,33 @@ class SigninActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         binding.btnMasuk.setOnClickListener {
+            isLoading(true)
             auth.signInWithEmailAndPassword(
                 binding.etEmail.text.toString(),
                 binding.etPassword.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
+                    isLoading(false)
                     Snackbar.make(binding.root, "Anda berhasil login", Snackbar.LENGTH_SHORT)
                         .show()
                     val intent = Intent(this, SetNameActivity::class.java)
                     startActivity(intent)
                 } else {
+                    isLoading(false)
                     Snackbar.make(binding.root, "ERROR! ${it.exception}", Snackbar.LENGTH_SHORT)
                             .show()
                 }
             }
+        }
+    }
+
+    private fun isLoading(state: Boolean) {
+        if (state) {
+            binding.btnMasuk.visibility = View.INVISIBLE
+            binding.pbMasuk.visibility = View.VISIBLE
+        } else {
+            binding.btnMasuk.visibility = View.VISIBLE
+            binding.pbMasuk.visibility = View.INVISIBLE
         }
     }
 }

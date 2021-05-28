@@ -16,7 +16,6 @@ class AboutUsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.title = "Tentang Kami"
-        supportActionBar?.elevation = 0f
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
