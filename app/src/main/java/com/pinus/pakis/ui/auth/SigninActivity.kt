@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.databinding.ActivitySigninBinding
-import com.pinus.pakis.ui.MainActivity
+import com.pinus.pakis.ui.main.MainActivity
 
 class SigninActivity : AppCompatActivity() {
 

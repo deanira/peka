@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         profileViewModel =
             ViewModelProvider(this).get(ProfileViewModel::class.java)
 
@@ -55,13 +55,18 @@ class ProfileFragment : Fragment() {
 
     fun clickItem() {
         with(binding) {
+            tvTentangKami.setOnClickListener {
+                val intent = Intent(context, AboutUsActivity::class.java)
+                startActivity(intent)
+            }
+
             tvProfile.setOnClickListener {
-                val intent = Intent(context, Account::class.java)
+                val intent = Intent(context, ProfileAccountActivity::class.java)
                 startActivity(intent)
             }
 
             tvAkun.setOnClickListener {
-                val intent = Intent(context, ProfileAccountActivity::class.java)
+                val intent = Intent(context, Account::class.java)
                 startActivity(intent)
             }
             tvKeluar.setOnClickListener {

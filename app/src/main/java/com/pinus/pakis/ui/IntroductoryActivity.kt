@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.databinding.ActivityIntroductoryBinding
+import com.pinus.pakis.ui.main.MainActivity
 import com.pinus.pakis.ui.onboarding.OnBoardingFragment1
 import com.pinus.pakis.ui.onboarding.OnBoardingFragment2
 import com.pinus.pakis.ui.onboarding.OnBoardingFragment3
@@ -32,7 +33,7 @@ class IntroductoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
         if (auth.currentUser != null){
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
         }

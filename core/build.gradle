@@ -7,7 +7,7 @@ plugins {
 apply from: '../app/shared_dependencies.gradle'
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    //buildToolsVersion "30.0.3"
 
     defaultConfig {
         minSdkVersion 21

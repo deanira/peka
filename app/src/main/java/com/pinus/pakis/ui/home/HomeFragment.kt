@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.pinus.pakis.databinding.FragmentHomeBinding
-import com.pinus.pakis.ui.GoPremiumActivity
 import com.pinus.pakis.ui.questions.QuestionActivity
 
 class HomeFragment : Fragment() {

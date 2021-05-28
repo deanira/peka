@@ -1,9 +1,7 @@
 package com.pinus.pakis.ui.aboutus
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat
-import com.pinus.pakis.R
+import androidx.appcompat.app.AppCompatActivity
 import com.pinus.pakis.databinding.ActivityAboutUsBinding
 
 class AboutUsActivity : AppCompatActivity() {

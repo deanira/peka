@@ -16,7 +16,7 @@ dependencies {
     //design
     implementation 'androidx.core:core-ktx:1.5.0'
     //firebase
-    implementation platform ('com.google.firebase:firebase-bom:28.0.1')
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
@@ -27,25 +27,30 @@ dependencies {
     implementation "androidx.activity:activity-ktx:${activityVersion}"
     implementation "androidx.fragment:fragment-ktx:$fragmentVersion"
 
-//coroutines
+    //coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
-// Coroutine Lifecycle Scopes
+    // Coroutine Lifecycle Scopes
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelVersion"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$viewModelVersion"
 
-//retrofit for api
+    //retrofit for api
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
-//okhtttp3
+    //okhtttp3
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
 
-// Dagger-Hilt
+    // Dagger-Hilt
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
-
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltViewModelVersion"
     kapt "androidx.hilt:hilt-compiler:$hiltCompilerVersion"
+
+    //lottie animation
+    implementation 'com.airbnb.android:lottie:3.4.0'
+    
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
