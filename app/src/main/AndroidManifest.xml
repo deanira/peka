@@ -13,14 +13,13 @@
         android:theme="@style/Theme.Pakis">
         <activity android:name=".ui.aboutus.AboutUsActivity"/>
         <activity android:name=".ui.auth.SetNameActivity" />
-        <activity android:name=".ui.auth.SetNameActivity" />
         <activity android:name=".ui.questions.QuestionActivity" />
         <activity android:name=".ui.profile_account.ProfileAccountActivity" />
-        <activity android:name=".ui.WebviewActivity" />
+        <activity android:name="com.pakis.pinus.core.ui.webview.WebviewActivity" />
         <activity
-            android:name=".ui.IntroductoryActivity"
+            android:name=".ui.introductory.IntroductoryActivity"
             android:noHistory="true" />
-        <activity android:name=".ui.GoPremiumActivity" />
+        <activity android:name=".ui.gopremium.GoPremiumActivity" />
         <activity android:name=".ui.auth.SignupSigninActivity" />
         <activity android:name=".ui.account.Account" />
         <activity android:name=".ui.auth.SignupActivity" />

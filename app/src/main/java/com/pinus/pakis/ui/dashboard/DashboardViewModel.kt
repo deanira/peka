@@ -7,7 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.pakis.pinus.core.data.source.remote.network.ApiResponse
 import com.pakis.pinus.core.data.source.remote.response.ArticleResponse
 import com.pakis.pinus.core.data.source.remote.response.MotivationResponse
+import com.pakis.pinus.core.domain.model.Article
+import com.pakis.pinus.core.domain.model.Video
 import com.pakis.pinus.core.domain.usecase.MainAppUseCase
+import com.pakis.pinus.core.utils.DataDummy
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -39,6 +42,7 @@ class DashboardViewModel @Inject constructor(
             }
         }
     }
+
     fun getMotivation() {
         viewModelScope.launch {
             val collect = useCase.getMotivation()
@@ -50,6 +54,14 @@ class DashboardViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun getDummyArticles(): MutableLiveData<ArrayList<Article>> {
+        return DataDummy.generateArticles()
+    }
+
+    fun getDummyVideos(): MutableLiveData<ArrayList<Video>> {
+        return DataDummy.generateVideos()
     }
 
 }

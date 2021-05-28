@@ -37,6 +37,7 @@ class QuestionActivity : AppCompatActivity() {
                 5, "isi nama anda"
             )
         )
+
         val step2 = QuestionStep(
             title = "Masukan Nama Anda2",
             text = "Mantap2",

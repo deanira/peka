@@ -36,31 +36,32 @@
             android:id="@+id/tv_tentang_kami"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:gravity="center_vertical"
             android:background="@drawable/shape_stroke_bottom"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/header">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 android:drawablePadding="10dp"
                 android:text="@string/firs_name"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tv_nama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 android:drawablePadding="10dp"
-                android:gravity="end"
                 android:fontFamily="@font/helvetica_neue_light"
+                android:gravity="end"
                 android:text="@string/firs_name_dummy"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -70,17 +71,17 @@
             android:id="@+id/last_name"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:gravity="center_vertical"
             android:background="@drawable/shape_stroke_bottom"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/ubahProfil">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 android:drawablePadding="10dp"
                 android:text="@string/last_name"
                 android:textColor="@color/black"
@@ -89,45 +90,47 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 android:drawablePadding="10dp"
-                android:gravity="end"
                 android:fontFamily="@font/helvetica_neue_light"
+                android:gravity="end"
                 android:text="@string/last_name_dummy"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:gravity="center_vertical"
             android:background="@drawable/shape_stroke_bottom"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/ubahProfil">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 android:drawablePadding="10dp"
                 android:text="@string/email"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="10dp"
+                android:layout_weight="1"
                 android:drawablePadding="10dp"
-                android:gravity="end"
                 android:fontFamily="@font/helvetica_neue_light"
+                android:gravity="end"
                 android:text="@string/email_dummmy"
                 android:textColor="@color/black"
                 android:textSize="15sp" />

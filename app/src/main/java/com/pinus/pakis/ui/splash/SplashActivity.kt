@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.pinus.pakis.databinding.ActivitySplashBinding
-import com.pinus.pakis.ui.IntroductoryActivity
+import com.pinus.pakis.ui.introductory.IntroductoryActivity
 
 class SplashActivity : AppCompatActivity() {
 

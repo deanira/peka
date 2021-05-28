@@ -9,6 +9,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.pakis.pinus.core.ui.ArticleRecyclerAdapter
+import com.pakis.pinus.core.ui.VideoRecyclerAdapter
 import com.pinus.pakis.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,6 +20,8 @@ class DashboardFragment : Fragment() {
 
     private val dashboardViewModel: DashboardViewModel by viewModels()
     private var _binding: FragmentDashboardBinding? = null
+    private lateinit var videoAdapter: VideoRecyclerAdapter
+    private lateinit var articleAdapter: ArticleRecyclerAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -39,16 +44,46 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dashboardViewModel.getArticles()
-        dashboardViewModel.getMotivation()
-        dashboardViewModel.articles.observe(viewLifecycleOwner,{
-            it.forEach {
-                Log.d("Articles", it.item)
+//        dashboardViewModel.getArticles()
+//        dashboardViewModel.getMotivation()
+
+//        dashboardViewModel.articles.observe(viewLifecycleOwner,{
+//            it.forEach {
+//                Log.d("Articles", it.item)
+//            }
+//        })
+//        dashboardViewModel.motivation.observe(viewLifecycleOwner,{
+//            it.forEach {
+//                Log.d("Motivation", it.item)
+//            }
+//        })
+
+        loadVideos()
+        loadArticles()
+    }
+
+    private fun loadVideos() {
+        videoAdapter = VideoRecyclerAdapter()
+        dashboardViewModel.getDummyVideos().observe(viewLifecycleOwner, {
+            videoAdapter.setData(it)
+            binding.rvVideo.apply {
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                adapter = this@DashboardFragment.videoAdapter
+                setHasFixedSize(true)
             }
         })
-        dashboardViewModel.motivation.observe(viewLifecycleOwner,{
-            it.forEach {
-                Log.d("Motivation", it.item)
+    }
+
+    private fun loadArticles() {
+        articleAdapter = ArticleRecyclerAdapter()
+        dashboardViewModel.getDummyArticles().observe(viewLifecycleOwner, {
+            articleAdapter.setData(it)
+            binding.rvArticles.apply {
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                adapter = this@DashboardFragment.articleAdapter
+                setHasFixedSize(true)
             }
         })
     }

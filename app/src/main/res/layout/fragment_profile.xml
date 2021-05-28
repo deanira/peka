@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/main_grey"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:paddingTop="40dp"
+    android:paddingHorizontal="20dp">
 
     <RelativeLayout
         android:id="@+id/tv_tentang_kami"

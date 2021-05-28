@@ -6,27 +6,28 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.pinus.pakis.databinding.ActivitySignupBinding
+import com.pinus.pakis.model.OrangTua
+
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var auth: FirebaseAuth
-    val TAG = SignupActivity::class.java.simpleName
+    private lateinit var ref: DatabaseReference
+    var mFirebaseAuth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mFirebaseAuth = FirebaseAuth.getInstance()
 
         supportActionBar?.hide()
 
-        auth = Firebase.auth
+        ref = FirebaseDatabase.getInstance().getReference("orangtua")
 
         binding.btnDaftar.setOnClickListener {
             isLoading(true)
@@ -58,28 +59,28 @@ class SignupActivity : AppCompatActivity() {
             }
 
             if (!isEmptyFields) {
-                auth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this@SignupActivity) { task ->
+                Log.d("halo", "tes firebase")
+                val orangTuaId = ref.push().key
+                val orangTua = OrangTua(orangTuaId!!,"", email, password)
+                mFirebaseAuth!!.createUserWithEmailAndPassword(orangTua.email, orangTua.password)
+                    .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             isLoading(false)
-                            // Sign in success, update UI with the signed-in user's information
-                            Snackbar.make(root, "Akun anda berhasil dibuat", Snackbar.LENGTH_SHORT)
-                                .show()
-                            Log.d(TAG, "createUserWithEmail:success")
-                            val user = auth.currentUser
-
-                            updateUI(user)
-                            val intent = Intent(applicationContext, SigninActivity::class.java)
-                            startActivity(intent)
+                            Toast.makeText(
+                                applicationContext,
+                                "Berhasil Membuat Akun",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            finish()
+                            startActivity(Intent(this@SignupActivity,SigninActivity::class.java))
                         } else {
                             isLoading(false)
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.exception)
                             Toast.makeText(
-                                baseContext, "Authentication failed. ${task.exception}",
-                                Toast.LENGTH_LONG
-                            ).show()
-                            updateUI(null)
+                                applicationContext,
+                                "Gagal Membuat Akun",
+                                Toast.LENGTH_SHORT
+                            )
+                                .show()
                         }
                     }
             }
@@ -94,9 +95,5 @@ class SignupActivity : AppCompatActivity() {
             binding.btnDaftar.visibility = View.VISIBLE
             binding.pbDaftar.visibility = View.INVISIBLE
         }
-    }
-
-    private fun updateUI(user: FirebaseUser?) {
-
     }
 }

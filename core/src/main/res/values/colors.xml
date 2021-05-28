@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_color_hint">#A1A1A1</color>
+    <color name="white_1">#FFFFFF</color>
+    <color name="gray">#ccccce</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="main_blue">#8E97FD</color>
+</resources>
