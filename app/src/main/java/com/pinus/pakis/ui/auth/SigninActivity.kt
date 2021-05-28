@@ -6,14 +6,17 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.databinding.ActivitySigninBinding
+import com.pinus.pakis.ui.MainActivity
 
 class SigninActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySigninBinding
     private lateinit var auth: FirebaseAuth
+    private lateinit var user: FirebaseUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +24,7 @@ class SigninActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth
+
 
         supportActionBar?.hide()
 
@@ -34,12 +38,19 @@ class SigninActivity : AppCompatActivity() {
                     isLoading(false)
                     Snackbar.make(binding.root, "Anda berhasil login", Snackbar.LENGTH_SHORT)
                         .show()
-                    val intent = Intent(this, SetNameActivity::class.java)
-                    startActivity(intent)
+                    user = auth.currentUser!!
+                    if (user.displayName == null) {
+                        val intent = Intent(this, SetNameActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
                 } else {
                     isLoading(false)
                     Snackbar.make(binding.root, "ERROR! ${it.exception}", Snackbar.LENGTH_SHORT)
-                            .show()
+                        .show()
                 }
             }
         }

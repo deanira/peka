@@ -7,14 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.pinus.pakis.databinding.FragmentProfileBinding
 import com.pinus.pakis.ui.aboutus.AboutUsActivity
 import com.pinus.pakis.ui.account.Account
+import com.pinus.pakis.ui.auth.SignupSigninActivity
+import com.pinus.pakis.ui.profile_account.ProfileAccountActivity
 
 class ProfileFragment : Fragment() {
 
     private lateinit var profileViewModel: ProfileViewModel
     private var _binding: FragmentProfileBinding? = null
+    private lateinit var auth: FirebaseAuth
+    private lateinit var user: FirebaseUser
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -36,18 +44,32 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvAkun.setOnClickListener {
-            val intent = Intent(context, Account::class.java)
-            startActivity(intent)
-        }
-        binding.tvTentangKami.setOnClickListener {
-            val intent = Intent(context, AboutUsActivity::class.java)
-            startActivity(intent)
-        }
+        auth = Firebase.auth
+        user = auth.currentUser!!
+        clickItem()
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun clickItem() {
+        with(binding) {
+            tvProfile.setOnClickListener {
+                val intent = Intent(context, Account::class.java)
+                startActivity(intent)
+            }
+
+            tvAkun.setOnClickListener {
+                val intent = Intent(context, ProfileAccountActivity::class.java)
+                startActivity(intent)
+            }
+            tvKeluar.setOnClickListener {
+                auth.signOut()
+                val intent = Intent(context, SignupSigninActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP;
+                startActivity(intent);
+            }
+        }
     }
 }

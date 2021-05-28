@@ -1,2 +1,3 @@
 rootProject.name = "peka"
 include ':app'
+include ':core'
