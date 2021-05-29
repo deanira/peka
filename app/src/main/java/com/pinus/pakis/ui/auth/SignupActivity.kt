@@ -10,7 +10,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.pinus.pakis.databinding.ActivitySignupBinding
-import com.pinus.pakis.model.OrangTua
 
 
 class SignupActivity : AppCompatActivity() {
@@ -59,10 +58,7 @@ class SignupActivity : AppCompatActivity() {
             }
 
             if (!isEmptyFields) {
-                Log.d("halo", "tes firebase")
-                val orangTuaId = ref.push().key
-                val orangTua = OrangTua(orangTuaId!!,"", email, password)
-                mFirebaseAuth!!.createUserWithEmailAndPassword(orangTua.email, orangTua.password)
+                mFirebaseAuth!!.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             isLoading(false)

@@ -81,7 +81,7 @@ class ProfileFragment : Fragment() {
                 val dialog = MaterialAlertDialogBuilder(requireContext())
                     .setTitle(resources.getString(R.string.exit))
                     .setMessage(resources.getString(R.string.exit_confirm))
-                    .setNeutralButton(resources.getString(R.string.cancel)) { dialog, which ->
+                    .setNegativeButton(resources.getString(R.string.cancel)) { dialog, which ->
                         // Respond to neutral button press
                         dialog.cancel()
                     }

@@ -1,14 +1,12 @@
 package com.pinus.pakis.ui.dashboard
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pakis.pinus.core.ui.ArticleRecyclerAdapter
 import com.pakis.pinus.core.ui.VideoRecyclerAdapter
@@ -36,7 +34,7 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
+        dashboardViewModel.text.observe(viewLifecycleOwner, {
             textView.text = it
         })
         return root

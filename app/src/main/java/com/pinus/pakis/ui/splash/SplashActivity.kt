@@ -17,8 +17,8 @@ class SplashActivity : AppCompatActivity() {
 
         binding.tvPakis.alpha = 0f
         binding.tvSubtitle.alpha = 0f
-        binding.tvSubtitle.animate().setDuration(3000).alpha(1f)
-        binding.tvPakis.animate().setDuration(3000).alpha(1f).withEndAction {
+        binding.tvSubtitle.animate().setDuration(1700).alpha(1f)
+        binding.tvPakis.animate().setDuration(1700).alpha(1f).withEndAction {
             val Intent = Intent(this, IntroductoryActivity::class.java)
             startActivity(Intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
