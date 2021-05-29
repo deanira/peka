@@ -9,13 +9,16 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
 import com.pinus.pakis.databinding.FragmentHomeBinding
 import com.pinus.pakis.ui.questions.QuestionActivity
+import java.lang.StringBuilder
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
+    private lateinit var name: String
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -46,15 +49,18 @@ class HomeFragment : Fragment() {
         }
         binding.pullToRefresh.setOnRefreshListener {
             populateView()
-            binding.pullToRefresh.isRefreshing = false
         }
     }
 
     private fun populateView() {
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        name = FirebaseAuth.getInstance().currentUser?.displayName.toString()
+
+        binding.textHome.text = StringBuilder("Selamat pagi, $name")
+        binding.pullToRefresh.isRefreshing = false
+//        val textView: TextView = binding.textHome
+//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
     }
 
     override fun onDestroyView() {

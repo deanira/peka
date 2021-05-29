@@ -73,4 +73,6 @@
     <string name="copyright">&#169; 2021 All Rights Reserved Terms of Use and Privacy Policy by PINUS</string>
     <string name="machine_learning_engineer">Machine Learning Engineer</string>
     <string name="cloud_computing_engineer">Cloud Computing Engineer</string>
+    <string name="exit">Keluar</string>
+    <string name="exit_confirm">Yakin ingin keluar?</string>
 </resources>
