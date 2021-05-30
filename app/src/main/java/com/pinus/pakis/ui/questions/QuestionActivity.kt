@@ -1,5 +1,6 @@
 package com.pinus.pakis.ui.questions
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -7,12 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.pinus.pakis.R
 import com.pinus.pakis.databinding.ActivityQuestionBinding
+import com.pinus.pakis.ui.result.ResultActivity
 import com.quickbirdstudios.surveykit.*
 import com.quickbirdstudios.surveykit.result.TaskResult
 import com.quickbirdstudios.surveykit.steps.CompletionStep
 import com.quickbirdstudios.surveykit.steps.InstructionStep
 import com.quickbirdstudios.surveykit.steps.QuestionStep
 import com.quickbirdstudios.surveykit.steps.Step
+import java.lang.Exception
 
 
 class QuestionActivity : AppCompatActivity() {
@@ -36,9 +39,10 @@ class QuestionActivity : AppCompatActivity() {
                 buttonText = "test mulai"
             )
             listQuestion.add(inst)
-            data.forEach { question ->
+
+            data.forEachIndexed {number, question ->
                 val questions = QuestionStep(
-                    title = question.id,
+                    title = number.toString()+" "+question.id,
                     text = question.question,
                     answerFormat = AnswerFormat.SingleChoiceAnswerFormat(
                         listOf(
@@ -60,6 +64,8 @@ class QuestionActivity : AppCompatActivity() {
             )
             listQuestion.add(comp)
 
+            Log.d("SIZE", listQuestion.size.toString())
+
             val steps: List<Step> = listQuestion
 
             val task = OrderedTask(steps = steps)
@@ -73,12 +79,31 @@ class QuestionActivity : AppCompatActivity() {
             binding.question.start(task, configuration)
         })
 
+        val answerFormat: ArrayList<String> = arrayListOf()
         binding.question.onSurveyFinish = { taskResult: TaskResult, reason: FinishReason ->
             if (reason == FinishReason.Completed) {
-                taskResult.results.forEach { stepResult ->
-                    Log.d("logTag", "answer ${stepResult.results.firstOrNull()?.stringIdentifier}")
+                taskResult.results.forEachIndexed loop@{ number, stepResult ->
+                    if (number == 0 || number == 52) return@loop
+                    else {
+                        var anwer = stepResult.results.firstOrNull()?.stringIdentifier!!
+                        answerFormat.add(
+                            anwer
+                        )
+                    }
                 }
-                finish()
+
+                var answerInt: ArrayList<Int> = arrayListOf()
+                answerFormat.forEachIndexed loopdua@{ number, answer ->
+                    try {
+                        answerInt.add(answer.trim().toInt())
+                    } catch (e: Exception) {
+                        Log.d("EXCEPTION", "$number ${e.cause.toString()}")
+                    }
+                }
+                answerInt.add(1)
+                val intent = Intent(this,ResultActivity::class.java)
+                intent.putExtra("EXTRA_LIST", answerInt.toIntArray())
+                startActivity(intent)
             }
             if (reason == FinishReason.Discarded) {
                 Log.d("logTag", "cancelled")

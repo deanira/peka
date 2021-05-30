@@ -5,25 +5,28 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:icon="@drawable/logo_peka"
         android:name=".BaseApplication"
+        android:icon="@drawable/logo_peka"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_peka"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pakis">
-        <activity android:name=".ui.aboutus.AboutUsActivity"/>
+        <activity android:name=".ui.result.ResultActivity"></activity>
+        <activity android:name=".ui.aboutus.AboutUsActivity" />
         <activity android:name=".ui.auth.SetNameActivity" />
         <activity android:name=".ui.questions.QuestionActivity" />
-        <activity android:name=".ui.profile_account.ProfileAccountActivity"
-            android:theme="@style/NoActionBar"/>
+        <activity
+            android:name=".ui.profile_account.ProfileAccountActivity"
+            android:theme="@style/NoActionBar" />
         <activity android:name="com.pakis.pinus.core.ui.webview.WebviewActivity" />
         <activity
             android:name=".ui.introductory.IntroductoryActivity"
             android:noHistory="true" />
         <activity android:name=".ui.gopremium.GoPremiumActivity" />
         <activity android:name=".ui.auth.SignupSigninActivity" />
-        <activity android:name=".ui.account.Account"
-            android:theme="@style/NoActionBar"/>
+        <activity
+            android:name=".ui.account.Account"
+            android:theme="@style/NoActionBar" />
         <activity android:name=".ui.auth.SignupActivity" />
         <activity
             android:name=".ui.splash.SplashActivity"
