@@ -35,10 +35,13 @@ android {
     }
     buildFeatures {
         viewBinding true
+        mlModelBinding true
     }
 }
 
 dependencies {
     api project(":core")
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.1.0-rc1'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0-rc1'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
