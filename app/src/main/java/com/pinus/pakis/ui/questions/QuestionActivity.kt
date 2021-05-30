@@ -1,5 +1,6 @@
 package com.pinus.pakis.ui.questions
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.pinus.pakis.R
 import com.pinus.pakis.databinding.ActivityQuestionBinding
+import com.pinus.pakis.ui.result.ResultActivity
 import com.quickbirdstudios.surveykit.*
 import com.quickbirdstudios.surveykit.result.TaskResult
 import com.quickbirdstudios.surveykit.steps.CompletionStep
@@ -98,11 +100,10 @@ class QuestionActivity : AppCompatActivity() {
                         Log.d("EXCEPTION", "$number ${e.cause.toString()}")
                     }
                 }
-                answerInt.forEachIndexed { number, answer ->
-                    Log.d("Answer $number", answer.toString())
-                }
-
-                finish()
+                answerInt.add(1)
+                val intent = Intent(this,ResultActivity::class.java)
+                intent.putExtra("EXTRA_LIST", answerInt.toIntArray())
+                startActivity(intent)
             }
             if (reason == FinishReason.Discarded) {
                 Log.d("logTag", "cancelled")
