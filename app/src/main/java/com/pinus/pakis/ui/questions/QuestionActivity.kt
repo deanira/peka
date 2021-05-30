@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import com.pinus.pakis.R
 import com.pinus.pakis.databinding.ActivityQuestionBinding
 import com.quickbirdstudios.surveykit.*
-import com.quickbirdstudios.surveykit.backend.views.step.QuestionView
 import com.quickbirdstudios.surveykit.result.TaskResult
 import com.quickbirdstudios.surveykit.steps.CompletionStep
 import com.quickbirdstudios.surveykit.steps.InstructionStep
@@ -79,6 +78,10 @@ class QuestionActivity : AppCompatActivity() {
                 taskResult.results.forEach { stepResult ->
                     Log.d("logTag", "answer ${stepResult.results.firstOrNull()?.stringIdentifier}")
                 }
+                finish()
+            }
+            if (reason == FinishReason.Discarded) {
+                Log.d("logTag", "cancelled")
                 finish()
             }
         }
