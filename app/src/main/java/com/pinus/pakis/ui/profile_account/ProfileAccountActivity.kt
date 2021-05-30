@@ -14,9 +14,17 @@ class ProfileAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileAccountBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.hide()
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = ""
 
         binding.tvNama.text = FirebaseAuth.getInstance().currentUser?.displayName.toString()
         binding.tvEmail.text = FirebaseAuth.getInstance().currentUser?.email.toString()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
     }
 }

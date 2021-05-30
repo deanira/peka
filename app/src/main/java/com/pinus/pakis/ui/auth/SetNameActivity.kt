@@ -32,7 +32,7 @@ class SetNameActivity : AppCompatActivity() {
     }
 
     private fun updateProfile() {
-        var profileUpdate = UserProfileChangeRequest.Builder()
+        val profileUpdate = UserProfileChangeRequest.Builder()
             .setDisplayName(binding.etName.text.toString())
             .build()
 

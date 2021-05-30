@@ -36,8 +36,6 @@ class SigninActivity : AppCompatActivity() {
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     isLoading(false)
-                    Snackbar.make(binding.root, "Anda berhasil login", Snackbar.LENGTH_SHORT)
-                        .show()
                     user = auth.currentUser!!
                     if (user.displayName == null) {
                         val intent = Intent(this, SetNameActivity::class.java)

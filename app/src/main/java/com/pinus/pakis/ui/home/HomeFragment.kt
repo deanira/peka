@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
     private fun populateView() {
         name = FirebaseAuth.getInstance().currentUser?.displayName.toString()
 
-        binding.textHome.text = StringBuilder("Selamat pagi, $name")
+        binding.textHome.text = name
         binding.pullToRefresh.isRefreshing = false
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner, Observer {

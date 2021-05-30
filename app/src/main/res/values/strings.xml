@@ -75,4 +75,6 @@
     <string name="cloud_computing_engineer">Cloud Computing Engineer</string>
     <string name="exit">Keluar</string>
     <string name="exit_confirm">Yakin ingin keluar?</string>
+    <string name="selamat_datang">Selamat Datang,</string>
+    <string name="simpan">Simpan</string>
 </resources>
