@@ -44,12 +44,20 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dashboardViewModel.getArticles()
-        dashboardViewModel.articles.observe(viewLifecycleOwner,{
+//        dashboardViewModel.getArticles()
+//        dashboardViewModel.articles.observe(viewLifecycleOwner,{
+//            it.forEachIndexed { number, item ->
+//                Log.d("article $number", item.toString())
+//            }
+//        })
+
+        dashboardViewModel.getVideos()
+        dashboardViewModel.videos.observe(viewLifecycleOwner, {
             it.forEachIndexed { number, item ->
                 Log.d("article $number", item.toString())
             }
         })
+
         loadVideos()
         loadArticles()
     }
