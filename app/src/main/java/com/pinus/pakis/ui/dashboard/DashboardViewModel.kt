@@ -28,22 +28,7 @@ class DashboardViewModel @Inject constructor(
     }
     val text: LiveData<String> = _text
 
-    val articles = MutableLiveData<ArticleResponse>()
     val motivation = MutableLiveData<MotivationResponse>()
-    val videos = MutableLiveData<VideoResponse>()
-
-    fun getArticles() {
-        viewModelScope.launch {
-            val collect = useCase.getArticles()
-            collect.collect {
-                when (val apiResponse = it) {
-                    is ApiResponse.Success -> {
-                        articles.postValue(apiResponse.data!!)
-                    }
-                }
-            }
-        }
-    }
 
     fun getMotivation() {
         viewModelScope.launch {
@@ -52,19 +37,6 @@ class DashboardViewModel @Inject constructor(
                 when (val apiResponse = it) {
                     is ApiResponse.Success -> {
                         motivation.postValue(apiResponse.data!!)
-                    }
-                }
-            }
-        }
-    }
-
-    fun getVideos() {
-        viewModelScope.launch {
-            val collect = useCase.getVideos()
-            collect.collect {
-                when(val apiResponse = it){
-                    is ApiResponse.Success -> {
-                        videos.postValue(apiResponse.data!!)
                     }
                 }
             }

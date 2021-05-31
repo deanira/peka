@@ -3,8 +3,6 @@ package com.pinus.pakis.ui.result
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.pinus.pakis.R
-import com.pinus.pakis.databinding.ActivityAccountBinding
 import com.pinus.pakis.databinding.ActivityResultBinding
 import com.pinus.pakis.ml.Model
 import org.tensorflow.lite.DataType
