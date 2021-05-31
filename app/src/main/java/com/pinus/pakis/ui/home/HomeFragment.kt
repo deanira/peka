@@ -58,10 +58,6 @@ class HomeFragment : Fragment() {
 
         binding.textHome.text = name
         binding.pullToRefresh.isRefreshing = false
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
     }
 
     override fun onDestroyView() {
