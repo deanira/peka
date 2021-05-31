@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.pinus.pakis.R
 import com.pinus.pakis.ml.Model
 import org.tensorflow.lite.DataType
-import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
-import java.nio.ByteBuffer
 
 
 class ResultActivity : AppCompatActivity() {
@@ -19,9 +17,10 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
         val model = Model.newInstance(this)
 
-        val inputInt = intArrayOf(5,1,5,1,4,2,5,1,5,1,2,5,3,4,2,1,1,2,1,1,1,5,1,4,1,5,1,4,4,4,4,4,4,3,4,3,4,4,4,3,3,4,5,4,3,4,3,4,4,4,3,3)
+      //  val inputInt = intent.getIntArrayExtra("EXTRA_LIST")!!
+        val inputInt = arrayListOf(1,3,2,4,2,4,1,3,2,5,5,2,3,3,4,5,4,4,3,4,1,2,1,3,1,0,4,4,3,5,3,3,5,2,1,3,3,3,5,5,4,4,5,5,2,4,3,3,3,5,5,4).toIntArray()
 
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1,52), DataType.FLOAT32)
+        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 52), DataType.FLOAT32)
         inputFeature0.loadArray(inputInt)
 
         Log.d("shape ", inputFeature0.shape[0].toString())
@@ -38,8 +37,6 @@ class ResultActivity : AppCompatActivity() {
             it.toFloat()
         }
 
-        val map = arrayString.zip(arrayFloat).toList()
-
         val mappedResult = mapOf(
             arrayFloat[0] to arrayString[0],
             arrayFloat[1] to arrayString[1],
@@ -49,8 +46,8 @@ class ResultActivity : AppCompatActivity() {
         val maxfirst = mappedResult.maxOf {
             it.key
         }
-        val maxvalue =
- //       Log.d("max value is", maxfirst.)
+
+        Log.d("max value is", mappedResult[maxfirst]!!)
         model.close()
     }
 }
