@@ -29,6 +29,7 @@ class DashboardViewModel @Inject constructor(
 
     val articles = MutableLiveData<ArticleResponse>()
     val motivation = MutableLiveData<MotivationResponse>()
+    val videos = MutableLiveData<MotivationResponse>()
 
     fun getArticles() {
         viewModelScope.launch {
