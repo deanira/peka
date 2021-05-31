@@ -42,19 +42,6 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        dashboardViewModel.getArticles()
-//        dashboardViewModel.getMotivation()
-
-//        dashboardViewModel.articles.observe(viewLifecycleOwner,{
-//            it.forEach {
-//                Log.d("Articles", it.item)
-//            }
-//        })
-//        dashboardViewModel.motivation.observe(viewLifecycleOwner,{
-//            it.forEach {
-//                Log.d("Motivation", it.item)
-//            }
-//        })
 
         loadVideos()
         loadArticles()
