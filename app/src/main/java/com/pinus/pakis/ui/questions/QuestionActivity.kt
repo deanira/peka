@@ -15,7 +15,6 @@ import com.quickbirdstudios.surveykit.steps.CompletionStep
 import com.quickbirdstudios.surveykit.steps.InstructionStep
 import com.quickbirdstudios.surveykit.steps.QuestionStep
 import com.quickbirdstudios.surveykit.steps.Step
-import java.lang.Exception
 
 
 class QuestionActivity : AppCompatActivity() {
@@ -30,55 +29,11 @@ class QuestionActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        questionViewModel.getQuestionnaire().observe(this, { data ->
-            val listQuestion: ArrayList<Step> = ArrayList()
+        setupSurvey()
+        surveyFinished()
+    }
 
-            val inst = InstructionStep(
-                title = "test",
-                text = "test",
-                buttonText = "test mulai"
-            )
-            listQuestion.add(inst)
-
-            data.forEachIndexed {number, question ->
-                val questions = QuestionStep(
-                    title = number.toString()+" "+question.id,
-                    text = question.question,
-                    answerFormat = AnswerFormat.SingleChoiceAnswerFormat(
-                        listOf(
-                            TextChoice("Setuju", "5"),
-                            TextChoice("Agak Setuju", "4"),
-                            TextChoice("Sedang", "3"),
-                            TextChoice("Agak Tidak Setuju", "2"),
-                            TextChoice("Tidak Setuju", "1")
-                        )
-                    )
-                )
-                listQuestion.add(questions)
-            }
-
-            val comp = CompletionStep(
-                title = "finish",
-                text = "finish",
-                buttonText = "finish oke"
-            )
-            listQuestion.add(comp)
-
-            Log.d("SIZE", listQuestion.size.toString())
-
-            val steps: List<Step> = listQuestion
-
-            val task = OrderedTask(steps = steps)
-
-            val configuration = SurveyTheme(
-                themeColorDark = ContextCompat.getColor(this, R.color.cyan_normal_disabled),
-                themeColor = ContextCompat.getColor(this, R.color.cyan_normal),
-                textColor = ContextCompat.getColor(this, R.color.cyan_text)
-            )
-
-            binding.question.start(task, configuration)
-        })
-
+    private fun surveyFinished() {
         val answerFormat: ArrayList<String> = arrayListOf()
         binding.question.onSurveyFinish = { taskResult: TaskResult, reason: FinishReason ->
             if (reason == FinishReason.Completed) {
@@ -101,7 +56,7 @@ class QuestionActivity : AppCompatActivity() {
                     }
                 }
                 answerInt.add(1)
-                val intent = Intent(this,ResultActivity::class.java)
+                val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("EXTRA_LIST", answerInt.toIntArray())
                 startActivity(intent)
             }
@@ -110,5 +65,56 @@ class QuestionActivity : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    private fun setupSurvey() {
+        questionViewModel.getQuestionnaire().observe(this, { data ->
+            val listQuestion: ArrayList<Step> = ArrayList()
+
+            val inst = InstructionStep(
+                title = "Sebelum test dimulai",
+                text = "Kuisioner ini akan diisi oleh anak anda, silahkan berikan gawai ini kepada anak anda",
+                buttonText = "Mulai"
+            )
+            listQuestion.add(inst)
+
+            data.forEachIndexed { number, question ->
+                val nomor = number + 1
+                val questions = QuestionStep(
+                    title = nomor.toString(),
+                    text = question.question,
+                    answerFormat = AnswerFormat.SingleChoiceAnswerFormat(
+                        listOf(
+                            TextChoice("Setuju", "5"),
+                            TextChoice("Agak Setuju", "4"),
+                            TextChoice("Sedang", "3"),
+                            TextChoice("Agak Tidak Setuju", "2"),
+                            TextChoice("Tidak Setuju", "1")
+                        )
+                    )
+                )
+                listQuestion.add(questions)
+            }
+
+            val comp = CompletionStep(
+                title = "Survey Selesai",
+                text = "Terima Kasih, karena sudah mengisi survey ini",
+                buttonText = "Selesai"
+            )
+            listQuestion.add(comp)
+
+            Log.d("SIZE", listQuestion.size.toString())
+
+            val steps: List<Step> = listQuestion
+
+            val task = OrderedTask(steps = steps)
+
+            val configuration = SurveyTheme(
+                themeColorDark = ContextCompat.getColor(this, R.color.cyan_normal_disabled),
+                themeColor = ContextCompat.getColor(this, R.color.cyan_normal),
+                textColor = ContextCompat.getColor(this, R.color.white)
+            )
+            binding.question.start(task, configuration)
+        })
     }
 }

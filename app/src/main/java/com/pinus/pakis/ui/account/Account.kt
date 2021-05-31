@@ -1,6 +1,5 @@
 package com.pinus.pakis.ui.account
 
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,14 +7,11 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.addTextChangedListener
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.pinus.pakis.R
 import com.pinus.pakis.databinding.ActivityAccountBinding
 
 class Account : AppCompatActivity() {
@@ -115,7 +111,7 @@ class Account : AppCompatActivity() {
     }
 
     private fun showToast() {
-        val toast = Toast.makeText(this, "Update akun berhasil", Toast.LENGTH_SHORT)
+        Toast.makeText(this, "Update akun berhasil", Toast.LENGTH_SHORT).show()
     }
 
     private fun changePassword() {

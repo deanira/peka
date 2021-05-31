@@ -66,4 +66,7 @@ dependencies {
 
     // Also declare the dependency for the TensorFlow Lite library and specify its version
     implementation 'org.tensorflow:tensorflow-lite:2.3.0'
+
+    //round corner progress bar
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.2'
 }

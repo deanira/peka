@@ -4,18 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="24dp"
     tools:context=".ui.result.ResultActivity">
 
     <TextView
-        android:id="@+id/tv_result"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_label_1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+        android:id="@+id/rcpb_1"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintEnd_toStartOf="@id/tv_result_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_1"
+        app:rcAnimationEnable="true"
+        app:rcAnimationSpeedScale="1"
+        app:rcBackgroundColor="#0A000000"
+        app:rcBackgroundPadding="4dp"
+        app:rcMax="100"
+        app:rcProgress="50"
+        app:rcProgressColors="@array/sample_progress_gradient"
+        app:rcRadius="30dp" />
+
+    <TextView
+        android:id="@+id/tv_result_1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/helvetica_neue_light"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/rcpb_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rcpb_1"
+        app:layout_constraintTop_toTopOf="@id/rcpb_1" />
+
+    <TextView
+        android:id="@+id/tv_label_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rcpb_1" />
+
+    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+        android:id="@+id/rcpb_2"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintEnd_toEndOf="@id/rcpb_1"
+        app:layout_constraintStart_toStartOf="@id/rcpb_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_2"
+        app:rcAnimationEnable="true"
+        app:rcAnimationSpeedScale="1"
+        app:rcBackgroundColor="#0A000000"
+        app:rcBackgroundPadding="4dp"
+        app:rcMax="100"
+        app:rcProgressColors="@array/sample_progress_gradient"
+        app:rcRadius="30dp" />
+
+    <TextView
+        android:id="@+id/tv_result_2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/helvetica_neue_light"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/rcpb_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rcpb_1"
+        app:layout_constraintTop_toTopOf="@id/rcpb_2" />
+
+    <TextView
+        android:id="@+id/tv_label_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tv_label_1"
+        app:layout_constraintStart_toStartOf="@id/tv_label_1"
+        app:layout_constraintTop_toBottomOf="@id/rcpb_2" />
+
+    <com.akexorcist.roundcornerprogressbar.RoundCornerProgressBar
+        android:id="@+id/rcpb_3"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintEnd_toEndOf="@id/rcpb_1"
+        app:layout_constraintStart_toStartOf="@id/rcpb_1"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_3"
+        app:rcAnimationEnable="true"
+        app:rcAnimationSpeedScale="1"
+        app:rcBackgroundColor="#0A000000"
+        app:rcBackgroundPadding="4dp"
+        app:rcMax="100"
+        app:rcProgressColors="@array/sample_progress_gradient"
+        app:rcRadius="30dp" />
+
+    <TextView
+        android:id="@+id/tv_result_3"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/helvetica_neue_light"
+        android:maxLines="1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/rcpb_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rcpb_1"
+        app:layout_constraintTop_toTopOf="@id/rcpb_3" />
 
     <TextView
         android:id="@+id/tv_description"
@@ -24,6 +132,6 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_result" />
+        app:layout_constraintTop_toBottomOf="@id/tv_label_3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
