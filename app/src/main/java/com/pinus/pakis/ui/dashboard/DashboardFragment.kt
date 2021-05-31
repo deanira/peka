@@ -18,8 +18,6 @@ class DashboardFragment : Fragment() {
 
     private val dashboardViewModel: DashboardViewModel by viewModels()
     private var _binding: FragmentDashboardBinding? = null
-    private lateinit var videoAdapter: VideoRecyclerAdapter
-    private lateinit var articleAdapter: ArticleRecyclerAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -43,34 +41,9 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        loadVideos()
-        loadArticles()
-    }
-
-    private fun loadVideos() {
-        videoAdapter = VideoRecyclerAdapter()
-        dashboardViewModel.getDummyVideos().observe(viewLifecycleOwner, {
-            videoAdapter.setData(it)
-            binding.rvVideo.apply {
-                layoutManager =
-                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                adapter = this@DashboardFragment.videoAdapter
-                setHasFixedSize(true)
-            }
-        })
-    }
-
-    private fun loadArticles() {
-        articleAdapter = ArticleRecyclerAdapter()
-        dashboardViewModel.getDummyArticles().observe(viewLifecycleOwner, {
-            articleAdapter.setData(it)
-            binding.rvArticles.apply {
-                layoutManager =
-                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-                adapter = this@DashboardFragment.articleAdapter
-                setHasFixedSize(true)
-            }
-        })
+        val sectionsPagerAdapter = SectionsPagerAdapter(requireContext(), parentFragmentManager)
+        binding.viewPager.adapter = sectionsPagerAdapter
+        binding.tabs.setupWithViewPager(binding.viewPager)
     }
 
     override fun onDestroyView() {
