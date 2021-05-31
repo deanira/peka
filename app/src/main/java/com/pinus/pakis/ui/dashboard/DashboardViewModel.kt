@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.pakis.pinus.core.data.source.remote.network.ApiResponse
 import com.pakis.pinus.core.data.source.remote.response.ArticleResponse
 import com.pakis.pinus.core.data.source.remote.response.MotivationResponse
+import com.pakis.pinus.core.data.source.remote.response.VideoResponse
 import com.pakis.pinus.core.domain.model.Article
 import com.pakis.pinus.core.domain.model.Video
 import com.pakis.pinus.core.domain.usecase.MainAppUseCase
@@ -29,6 +30,7 @@ class DashboardViewModel @Inject constructor(
 
     val articles = MutableLiveData<ArticleResponse>()
     val motivation = MutableLiveData<MotivationResponse>()
+    val videos = MutableLiveData<VideoResponse>()
 
     fun getArticles() {
         viewModelScope.launch {
@@ -50,6 +52,19 @@ class DashboardViewModel @Inject constructor(
                 when (val apiResponse = it) {
                     is ApiResponse.Success -> {
                         motivation.postValue(apiResponse.data!!)
+                    }
+                }
+            }
+        }
+    }
+
+    fun getVideos() {
+        viewModelScope.launch {
+            val collect = useCase.getVideos()
+            collect.collect {
+                when(val apiResponse = it){
+                    is ApiResponse.Success -> {
+                        videos.postValue(apiResponse.data!!)
                     }
                 }
             }
