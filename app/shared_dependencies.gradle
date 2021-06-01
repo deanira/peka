@@ -24,6 +24,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:21.0.1'
     implementation 'com.google.android.gms:play-services-gcm:17.0.0'
     implementation 'com.google.firebase:firebase-auth-ktx'
+
+    //quickbird survey kit
     implementation "com.quickbirdstudios:surveykit:1.1.0"
 
     //lazy provides viewmodel
