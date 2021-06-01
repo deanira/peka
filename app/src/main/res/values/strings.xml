@@ -80,4 +80,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="conseling">Konseling</string>
+    <string name="desc_authoration">Pola pengasuhan ini menetapkan aturan atau perilaku yang dituntut untuk diikuti secara kaku dan tidak boleh dipertanyakan.
+        <br /> Orang tua suka menghukum secara fisik.
+        <br /> Orang tua cenderung bersikap mengomando (mengharuskan atau memerintah anak untuk melakukan sesuatu tanpa kompromi).
+        <br /> Bersikap kaku.
+        <br /> Orang tua cenderung emosional dan bersikap menolak
+    </string>
+    <string name="desc_authorative">Pola pengasuhan ini menekankan pada individualitas anak, mendorong anak agar belajar mandiri, namun orang tua tetap memegang kendali atas anak.
+        <br /> Orang tua bersikap realistis terhadap kemampuan anak, tidak berharap yang berlebihan yang melampaui kemampuan anak.
+        <br />Orang tua memberikan kebebasan kepada anak untuk memilih dan melakukan suatu tindakan.
+        <br />Bersikap responsif terhadap kemampuan anak.
+        <br />Mendorong anak untuk menyatakan pendapat atau pertanyaan.
+        <br />Memberikan penjelasan tentang dampak perbuatan baik dan buruk.
+        <br />Menghargai setiap keberhasilan yang diperoleh anak.
+    </string>
+    <string name="desc_permissive">Pola asuh ini merupakan pengasuhan tanpa penerapan disiplin pada anak.
+        <br />Orang tua tidak menegur atau memperingatkan anak apabila anak sedang dalam bahaya dan sangat sedikit bimbingan yang diberikan oleh mereka.
+        <br />Orang tua memberikan kebebasan kepada anak untuk menyatakan dorongan atau keinginannya.
+        <br />Orang tua tidak pernah menegur atau tidak berani menegur perilaku anak, meskipun perilaku tersebut sudah keterlaluan atau diluar batas kewajaran.
+    </string>
+    <string name="threat_authoration">Pola asuh ini cenderung menjadikan anak menjadi kurang terbuka kepada orang tua, menarik diri, penentang norma, penakut dan tidak memiliki inisiatif karena orang tidak membuka ruang diskusi terhadap anak. Hal ini menyebabkan tuntutan dari orang tua tidak mendapatkan titik temu dengan kehendak anak untuk melakukan suatu tindakan dalam hidupnya dan Menunjukkan keterampilan sosial yang buruk, tingkat harga diri yang rendah dan tingkat depresi yang tinggi. Dampak lainnya pola asuh otoriter terhadap perkembangan anak lainnya, yakni dapat membuat emosi anak meledak-ledak, hubungan interpersonal (dengan orang lain) yang kurang baik, dan cenderung menjadi pribadi yang otoriter di kemudian hari. Bahkan, anak-anak yang terpapar gaya pengasuhan seperti ini berisiko tidak berprestasi di sekolah.</string>
+    <string name="threat_authorative">Pola asuh ini merupakan pola asuh yang paling relevan dan dapat menimbulkan keserasian terhadap tuntutan orang tua dan kehendak anak untuk melakukan tindakan. Karena dalam pola asuh otoritatif menghendaki adanya diskusi sehingga anak menjadi terbuka, anak memiliki inisiatif untuk bertindak dan terjadi nya koordinasi antara orang tua dan anak. Hal ini jelas dapat membangun relasi yang baik antara orang tua dan anak.</string>
+    <string name="threat_permissive">Pola asuh ini menghendaki anak untuk melakukan apapun tanpa adanya tuntutan orang tua terhadap anak. Karena pola asuh permisif ini menghendaki anak untuk melakukan apapun maka anak akan terbiasa untuk menentukan apapun keputusannya sendiri, dalam hal ini anak menjadi egois. Karena anak dibiarkan melakukan apapun, anak menjadi tidak mendapatkan bimbingan mengenai peraturan sosial dari orang tua. Hal ini akan membuat anak terbiasa untuk melakukan pelanggaran terhadap norma sosial yang ada seperti contoh perilaku. pengguna narkoba, perilaku yang salah di sekolah, dan orientasi yang kurang positif terhadap perguruan tinggi. Sehingga pola asuh permisif juga dikaitkan dengan harga diri yang rendah dan orientasi motivasi ekstrinsik di kalangan remaja. Dampak pola asuh permisif lainnya  terhadap perkembangan anak, yakni membuat anak sulit menyesuaikan diri dengan lingkungan, menuntut, cenderung memberontak dan motivasi belajar yang kurang. Namun, dalam jangka panjang, anak menjadi bingung karena tidak terbiasa dengan batasan yang ada</string>
 </resources>

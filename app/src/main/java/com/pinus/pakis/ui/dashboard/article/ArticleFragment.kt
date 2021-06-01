@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pakis.pinus.core.ui.ArticleRecyclerAdapter
 import com.pinus.pakis.databinding.FragmentArticleBinding
 import com.pinus.pakis.ui.dashboard.DashboardViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ArticleFragment : Fragment() {
 
-    private val dashboardViewModel: DashboardViewModel by viewModels()
+    private val articleViewModel: ArticleViewModel by viewModels()
     private lateinit var articleAdapter: ArticleRecyclerAdapter
     private lateinit var binding: FragmentArticleBinding
 
@@ -33,15 +35,26 @@ class ArticleFragment : Fragment() {
     }
 
     private fun loadArticles() {
+        isLoading(true)
         articleAdapter = ArticleRecyclerAdapter()
-        dashboardViewModel.getDummyArticles().observe(viewLifecycleOwner, {
+        articleViewModel.getArticles()
+        articleViewModel.articles.observe(viewLifecycleOwner, {
             articleAdapter.setData(it)
             binding.rvArticles.apply {
                 layoutManager =
-                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 adapter = this@ArticleFragment.articleAdapter
                 setHasFixedSize(true)
             }
+            isLoading(false)
         })
+    }
+
+    private fun isLoading(state: Boolean) {
+        if (state) {
+            binding.progressCircular.visibility = View.VISIBLE
+        } else {
+            binding.progressCircular.visibility = View.INVISIBLE
+        }
     }
 }

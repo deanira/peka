@@ -11,4 +11,5 @@
     <color name="light_blue">#8ebafd</color>
     <color name="main_grey">#F2F3F7</color>
     <color name="text_color_hint">#A1A1A1</color>
+    <color name="indigo_blue">#343f56</color>
 </resources>
