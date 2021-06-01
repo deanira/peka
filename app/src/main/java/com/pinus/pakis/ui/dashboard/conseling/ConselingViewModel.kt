@@ -7,8 +7,9 @@ import com.pakis.pinus.core.domain.usecase.MainAppUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class ConselingViewModel   @Inject constructor(
-    private val useCase: MainAppUseCase
-) : ViewModel() {
+class ConselingViewModel  : ViewModel() {
+
+    val dataConselling = DummyConseling.getDummyConcelling()
+
+
 }
