@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pakis.pinus.core.R
+import com.pakis.pinus.core.data.source.remote.response.VideoResponse
+import com.pakis.pinus.core.data.source.remote.response.VideoResponseItem
 import com.pakis.pinus.core.databinding.ItemVideoBinding
 import com.pakis.pinus.core.domain.model.Video
 import com.pakis.pinus.core.ui.webview.WebviewActivity
@@ -13,9 +15,9 @@ import com.pakis.pinus.core.utils.Helper.loadImage
 
 class VideoRecyclerAdapter : RecyclerView.Adapter<VideoRecyclerAdapter.ListViewHolder>() {
 
-    var mData = ArrayList<Video>()
+    private var mData = VideoResponse()
 
-    fun setData(items: ArrayList<Video>) {
+    fun setData(items: VideoResponse) {
         mData.clear()
         mData.addAll(items)
         notifyDataSetChanged()
@@ -23,12 +25,12 @@ class VideoRecyclerAdapter : RecyclerView.Adapter<VideoRecyclerAdapter.ListViewH
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemVideoBinding.bind(itemView)
-        fun bind(items: Video) {
-            binding.ivThumbnail.loadImage(items.thumbnailPath)
+        fun bind(items: VideoResponseItem) {
+            binding.ivThumbnail.loadImage(items.thumbnail)
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, WebviewActivity::class.java)
-                intent.putExtra(WebviewActivity.URL, items.link)
+                intent.putExtra(WebviewActivity.URL, items.videoUrl)
                 itemView.context.startActivity(intent)
             }
         }

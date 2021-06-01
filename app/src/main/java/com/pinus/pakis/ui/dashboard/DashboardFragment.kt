@@ -41,7 +41,16 @@ class DashboardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(requireContext(), parentFragmentManager)
+        setupPagerAdapter()
+
+        binding.pullToRefresh.setOnRefreshListener {
+            setupPagerAdapter()
+            binding.pullToRefresh.isRefreshing = false
+        }
+    }
+
+    private fun setupPagerAdapter() {
+        val sectionsPagerAdapter = SectionsPagerAdapter(requireContext(), childFragmentManager)
         binding.viewPager.adapter = sectionsPagerAdapter
         binding.tabs.setupWithViewPager(binding.viewPager)
     }

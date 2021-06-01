@@ -132,6 +132,15 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_label_3" />
+        app:layout_constraintTop_toBottomOf="@id/rcpb_3" />
+
+    <TextView
+        android:id="@+id/tv_threat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

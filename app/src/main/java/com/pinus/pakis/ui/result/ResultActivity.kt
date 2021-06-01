@@ -1,8 +1,10 @@
 package com.pinus.pakis.ui.result
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.pinus.pakis.R
 import com.pinus.pakis.databinding.ActivityResultBinding
 import com.pinus.pakis.ml.Model
 import org.tensorflow.lite.DataType
@@ -121,6 +123,19 @@ class ResultActivity : AppCompatActivity() {
         binding.tvResult2.text = (sortedResult[1] * 100).toString()
         binding.tvResult3.text = (sortedResult[2] * 100).toString()
 
-//        binding.tvDescription.text =
+        when (mappedResult[sortedResult[0]]) {
+            arrayString[0] -> {
+                binding.tvDescription.text = getString(R.string.desc_authoration)
+                binding.tvThreat.text = getString(R.string.threat_authoration)
+            }
+            arrayString[1] -> {
+                binding.tvDescription.text = getString(R.string.desc_authorative)
+                binding.tvThreat.text = getString(R.string.threat_authorative)
+            }
+            arrayString[2] -> {
+                binding.tvDescription.text = getString(R.string.desc_authoration)
+                binding.tvThreat.text = getString(R.string.threat_permissive)
+            }
+        }
     }
 }

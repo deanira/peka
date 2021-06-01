@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.pakis.pinus.core.R
+import com.pakis.pinus.core.data.source.remote.response.ArticleResponse
+import com.pakis.pinus.core.data.source.remote.response.ArticleResponseItem
 import com.pakis.pinus.core.databinding.ItemArticleBinding
 import com.pakis.pinus.core.domain.model.Article
 import com.pakis.pinus.core.ui.webview.WebviewActivity
@@ -14,9 +16,9 @@ import com.pakis.pinus.core.utils.Helper.loadImage
 
 class ArticleRecyclerAdapter : RecyclerView.Adapter<ArticleRecyclerAdapter.ListViewHolder>() {
 
-    var mData = ArrayList<Article>()
+    private var mData = ArticleResponse()
 
-    fun setData(items: ArrayList<Article>) {
+    fun setData(items: ArticleResponse) {
         mData.clear()
         mData.addAll(items)
         notifyDataSetChanged()
@@ -24,14 +26,14 @@ class ArticleRecyclerAdapter : RecyclerView.Adapter<ArticleRecyclerAdapter.ListV
 
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemArticleBinding.bind(itemView)
-        fun bind(items: Article) {
+        fun bind(items: ArticleResponseItem) {
             binding.tvTitle.text = items.judul
             binding.tvDescription.text = items.deskripsi
-            binding.ivBanner.loadImage(items.bannerPath)
+            binding.ivBanner.loadImage(items.fotoURL)
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, WebviewActivity::class.java)
-                intent.putExtra(URL, items.link)
+                intent.putExtra(URL, items.articleURL)
                 itemView.context.startActivity(intent)
             }
         }
