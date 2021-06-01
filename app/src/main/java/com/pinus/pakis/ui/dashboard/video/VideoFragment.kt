@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pakis.pinus.core.ui.VideoRecyclerAdapter
 import com.pinus.pakis.databinding.FragmentVideoBinding
-import com.pinus.pakis.ui.dashboard.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

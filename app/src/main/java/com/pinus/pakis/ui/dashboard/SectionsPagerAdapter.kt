@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.pinus.pakis.R
 import com.pinus.pakis.ui.dashboard.article.ArticleFragment
-import com.pinus.pakis.ui.dashboard.conseling.ConselingFragment
+import com.pinus.pakis.ui.dashboard.conseling.CounselingFragment
 import com.pinus.pakis.ui.dashboard.video.VideoFragment
 
 class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
@@ -24,7 +24,7 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
         when (position) {
             0 -> VideoFragment()
             1 -> ArticleFragment()
-            3 -> ConselingFragment()
+            3 -> CounselingFragment()
             else -> Fragment()
         }
 

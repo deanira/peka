@@ -5,4 +5,5 @@
     <color name="gray">#ccccce</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="main_blue">#8E97FD</color>
+    <color name="indigo_blue">#343f56</color>
 </resources>

@@ -129,7 +129,10 @@
         android:id="@+id/tv_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:justificationMode="inter_word"
+        android:fontFamily="@font/helvetica_neue_light"
+        android:lineSpacingMultiplier="1.2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rcpb_3" />
@@ -138,7 +141,10 @@
         android:id="@+id/tv_threat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:justificationMode="inter_word"
+        android:lineSpacingMultiplier="1.2"
+        android:fontFamily="@font/helvetica_neue_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_description" />
