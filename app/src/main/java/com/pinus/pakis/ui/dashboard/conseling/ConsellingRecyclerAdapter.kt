@@ -35,7 +35,7 @@ class ConsellingRecyclerAdapter : RecyclerView.Adapter<ConsellingRecyclerAdapter
         fun bind(items: Conselling) {
             with(binding) {
                 tvName.text = items.name
-                tvAddress.text = items.name
+                tvAddress.text = items.address
                 tvLink.text = items.website
                 tvTelepon.text = items.phone
             }

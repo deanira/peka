@@ -31,7 +31,13 @@ class ConselingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadConselling()
+        consellingAdapter = ConsellingRecyclerAdapter()
+        consellingAdapter.setData(viewModel.dataConselling)
+        binding.rvConseling.apply {
+            LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            adapter = consellingAdapter
+            setHasFixedSize(true)
+        }
         viewModel.dataConselling.forEach {
             Log.e("kikoko" , it.name)
         }
