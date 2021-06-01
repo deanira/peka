@@ -31,6 +31,7 @@ class CounselingFragment : Fragment() {
     }
 
     private fun loadCounseling() {
+        isLoading(true)
         counselingAdapter = CounselingRecyclerAdapter()
         counselingAdapter.setData(viewModel.dataCounseling)
         binding.rvCounseling.apply {
@@ -38,6 +39,15 @@ class CounselingFragment : Fragment() {
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = counselingAdapter
             setHasFixedSize(true)
+        }
+        isLoading(false)
+    }
+
+    private fun isLoading(state: Boolean) {
+        if (state) {
+            binding.progressCircular.visibility = View.VISIBLE
+        } else {
+            binding.progressCircular.visibility = View.INVISIBLE
         }
     }
 }
