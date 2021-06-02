@@ -24,7 +24,7 @@ class SectionsPagerAdapter(private val mContext: Context, fm: FragmentManager) :
         when (position) {
             0 -> VideoFragment()
             1 -> ArticleFragment()
-            3 -> CounselingFragment()
+            2 -> CounselingFragment()
             else -> Fragment()
         }
 

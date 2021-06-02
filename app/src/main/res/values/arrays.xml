@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="sample_progress_gradient">
-        <item>#009688</item>
-        <item>#80CBC4</item>
+    <array name="sample_progress_gradient_1">
+        <item>#ff2e57</item>
+        <item>#ff9eb1</item>
+    </array>
+    <array name="sample_progress_gradient_2">
+        <item>#5c52d7</item>
+        <item>#a7a3d6</item>
+    </array>
+    <array name="sample_progress_gradient_3">
+        <item>#ff8a00</item>
+        <item>#ffcd91</item>
     </array>
 </resources>
