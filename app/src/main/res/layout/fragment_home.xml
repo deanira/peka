@@ -103,24 +103,36 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/iv_quote"
+                        android:id="@+id/iv_quote_left"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_baseline_format_quote_24"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/main_blue" />
+                        app:tint="@color/yellow"
+                        android:rotation="180"/>
+
+                    <ImageView
+                        android:id="@+id/iv_quote_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_format_quote_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/yellow"/>
 
                     <TextView
                         android:id="@+id/tv_daily_motivation"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="@string/daily_parenting_motivation"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/iv_quote"
-                        app:layout_constraintTop_toBottomOf="@id/iv_quote" />
+                        android:justificationMode="inter_word"
+                        app:layout_constraintStart_toEndOf="@id/iv_quote_left"
+                        app:layout_constraintTop_toBottomOf="@id/iv_quote_left"
+                        app:layout_constraintEnd_toStartOf="@id/iv_quote_right"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -129,7 +141,8 @@
                         android:lineSpacingMultiplier="1.2"
                         android:text="@string/parenting_motivation_1"
                         android:textColor="@color/white"
-                        app:layout_constraintStart_toEndOf="@id/iv_quote"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_daily_motivation" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
