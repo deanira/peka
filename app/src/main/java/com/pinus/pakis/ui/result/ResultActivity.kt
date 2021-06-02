@@ -23,6 +23,13 @@ class ResultActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
         calculateResult()
+        setupViews()
+    }
+
+    private fun setupViews() {
+        binding.tvGoPremium.setOnClickListener {
+
+        }
     }
 
     private fun calculateResult() {

@@ -55,7 +55,8 @@ class QuestionActivity : AppCompatActivity() {
                         Log.d("EXCEPTION", "$number ${e.cause.toString()}")
                     }
                 }
-                answerInt.add(1)
+                answerInt.add(3)
+
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("EXTRA_LIST", answerInt.toIntArray())
                 startActivity(intent)
@@ -97,8 +98,8 @@ class QuestionActivity : AppCompatActivity() {
             }
 
             val comp = CompletionStep(
-                title = "Survey Selesai",
-                text = "Terima Kasih, karena sudah mengisi survey ini",
+                title = "Kuisioner Selesai",
+                text = "Terima Kasih, karena sudah mengisi kuisioner ini secara bijak dan jujur ini",
                 buttonText = "Selesai"
             )
             listQuestion.add(comp)
