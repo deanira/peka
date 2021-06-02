@@ -9,6 +9,7 @@ import com.pinus.pakis.databinding.ActivityResultBinding
 import com.pinus.pakis.ml.Model
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.lang.StringBuilder
 
 
 class ResultActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
         calculateResult()
     }
 
@@ -123,6 +125,8 @@ class ResultActivity : AppCompatActivity() {
         binding.tvResult2.text = (sortedResult[1] * 100).toString()
         binding.tvResult3.text = (sortedResult[2] * 100).toString()
 
+        binding.tvLabelResult.text = StringBuilder("Anda cenderung menerapkan pola asuh ${mappedResult[sortedResult[0]]}")
+
         when (mappedResult[sortedResult[0]]) {
             arrayString[0] -> {
                 binding.tvDescription.text = getString(R.string.desc_authoration)
@@ -133,7 +137,7 @@ class ResultActivity : AppCompatActivity() {
                 binding.tvThreat.text = getString(R.string.threat_authorative)
             }
             arrayString[2] -> {
-                binding.tvDescription.text = getString(R.string.desc_authoration)
+                binding.tvDescription.text = getString(R.string.desc_permissive)
                 binding.tvThreat.text = getString(R.string.threat_permissive)
             }
         }
