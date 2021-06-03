@@ -35,16 +35,9 @@ class Account : AppCompatActivity() {
         binding.etProfileEmailInput.setText(email)
         binding.etProfileNameInput.setText(nama)
 
-        emailListener()
         namaListener()
 
         binding.btnUbahPassword.setOnClickListener {
-            if (binding.etProfileEmailInput.text.toString()
-                    .trim() != email
-            ) {
-                isLoading(true)
-                changeEmail()
-            }
             if (binding.etProfileNameInput.text.toString()
                     .trim() != nama
             ) {
@@ -60,27 +53,6 @@ class Account : AppCompatActivity() {
 
     private fun namaListener() {
         binding.etProfileNameInput.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s != nama) {
-                    binding.btnUbahPassword.visibility = View.VISIBLE
-                }
-                if (s == nama) {
-                    binding.btnUbahPassword.visibility = View.INVISIBLE
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-
-            }
-        })
-    }
-
-    private fun emailListener() {
-        binding.etProfileEmailInput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -126,24 +98,10 @@ class Account : AppCompatActivity() {
         showToast()
     }
 
-    private fun changeEmail() {
-        user.updateEmail(binding.etProfileEmailInput.text.toString().trim())
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d("STATUS", "User email updated.")
-                    Toast.makeText(this, "User email updated.", Toast.LENGTH_SHORT).show()
-                }
-            }
-        isLoading(false)
-        showToast()
-    }
-
     private fun isLoading(state: Boolean) {
         if (state) {
-            binding.btnUbahPassword.visibility = View.INVISIBLE
             binding.pbUpdate.visibility = View.VISIBLE
         } else {
-            binding.btnUbahPassword.visibility = View.VISIBLE
             binding.pbUpdate.visibility = View.INVISIBLE
         }
     }

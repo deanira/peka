@@ -44,6 +44,7 @@
             android:layout_height="match_parent"
             android:backgroundTint="@color/white"
             android:ems="10"
+            android:enabled="false"
             android:hint="@string/email"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -179,7 +180,6 @@
         android:layout_height="0dp"
         android:background="@drawable/rounded_button"
         android:text="@string/simpan"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".07"
