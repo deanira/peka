@@ -1,5 +1,6 @@
 package com.pinus.pakis.ui.result
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
@@ -7,10 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.pinus.pakis.R
 import com.pinus.pakis.databinding.ActivityResultBinding
 import com.pinus.pakis.ml.Model
+import com.pinus.pakis.ui.gopremium.GoPremiumActivity
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.lang.StringBuilder
-
+import java.math.BigDecimal
 
 class ResultActivity : AppCompatActivity() {
 
@@ -28,67 +30,14 @@ class ResultActivity : AppCompatActivity() {
 
     private fun setupViews() {
         binding.tvGoPremium.setOnClickListener {
-
+            val intent = Intent(this, GoPremiumActivity::class.java)
+            startActivity(intent)
         }
     }
 
     private fun calculateResult() {
         val model = Model.newInstance(this)
-//        val inputInt = intent.getIntArrayExtra("EXTRA_LIST")!!
-        val inputInt = arrayListOf(
-            1,
-            3,
-            2,
-            4,
-            2,
-            4,
-            1,
-            3,
-            2,
-            5,
-            5,
-            2,
-            3,
-            3,
-            4,
-            5,
-            4,
-            4,
-            3,
-            4,
-            1,
-            2,
-            1,
-            3,
-            1,
-            0,
-            4,
-            4,
-            3,
-            5,
-            3,
-            3,
-            5,
-            2,
-            1,
-            3,
-            3,
-            3,
-            5,
-            5,
-            4,
-            4,
-            5,
-            5,
-            2,
-            4,
-            3,
-            3,
-            3,
-            5,
-            5,
-            4
-        ).toIntArray()
+        val inputInt = intent.getIntArrayExtra("EXTRA_LIST")!!
 
         val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 52), DataType.FLOAT32)
         inputFeature0.loadArray(inputInt)
@@ -124,15 +73,20 @@ class ResultActivity : AppCompatActivity() {
         binding.tvLabel2.text = mappedResult[sortedResult[1]]
         binding.tvLabel3.text = mappedResult[sortedResult[2]]
 
-        binding.rcpb1.progress = sortedResult[0] * 100
-        binding.rcpb2.progress = sortedResult[1] * 100
-        binding.rcpb3.progress = sortedResult[2] * 100
+        val firstResult = sortedResult[0] * 100
+        val secondResult = sortedResult[1] * 100
+        val thirdResult = sortedResult[2] * 100
 
-        binding.tvResult1.text = (sortedResult[0] * 100).toString()
-        binding.tvResult2.text = (sortedResult[1] * 100).toString()
-        binding.tvResult3.text = (sortedResult[2] * 100).toString()
+        binding.rcpb1.progress = firstResult
+        binding.rcpb2.progress = secondResult
+        binding.rcpb3.progress = thirdResult
 
-        binding.tvLabelResult.text = StringBuilder("Anda cenderung menerapkan pola asuh ${mappedResult[sortedResult[0]]}")
+        binding.tvResult1.text = BigDecimal(firstResult.toString()).toPlainString()
+        binding.tvResult2.text = BigDecimal(secondResult.toString()).toPlainString()
+        binding.tvResult3.text = BigDecimal(thirdResult.toString()).toPlainString()
+
+        binding.tvLabelResult.text =
+            StringBuilder("Anda cenderung menerapkan pola asuh ${mappedResult[sortedResult[0]]}")
 
         when (mappedResult[sortedResult[0]]) {
             arrayString[0] -> {

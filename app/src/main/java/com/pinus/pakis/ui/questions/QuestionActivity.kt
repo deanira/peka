@@ -113,7 +113,7 @@ class QuestionActivity : AppCompatActivity() {
             val configuration = SurveyTheme(
                 themeColorDark = ContextCompat.getColor(this, R.color.cyan_normal_disabled),
                 themeColor = ContextCompat.getColor(this, R.color.cyan_normal),
-                textColor = ContextCompat.getColor(this, R.color.white)
+                textColor = ContextCompat.getColor(this, R.color.cyan_text)
             )
             binding.question.start(task, configuration)
         })

@@ -80,7 +80,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="conseling">Konseling</string>
-    <string name="desc_authoration">Pola pengasuhan ini menetapkan aturan atau perilaku yang dituntut untuk diikuti secara kaku dan tidak boleh dipertanyakan.
+    <string name="desc_authoration">\t\tPola pengasuhan ini menetapkan aturan atau perilaku yang dituntut untuk diikuti secara kaku dan tidak boleh dipertanyakan.
         \n
         \nCiri - Ciri :
         \n1. Orang tua suka menghukum secara fisik.
@@ -88,7 +88,7 @@
         \n3. Bersikap kaku.
         \n4. Orang tua cenderung emosional dan bersikap menolak
     </string>
-    <string name="desc_authorative">Pola pengasuhan ini menekankan pada individualitas anak, mendorong anak agar belajar mandiri, namun orang tua tetap memegang kendali atas anak.
+    <string name="desc_authorative">\t\tPola pengasuhan ini menekankan pada individualitas anak, mendorong anak agar belajar mandiri, namun orang tua tetap memegang kendali atas anak.
         \n
         \nCiri - Ciri :
         \n1. Orang tua bersikap realistis terhadap kemampuan anak, tidak berharap yang berlebihan yang melampaui kemampuan anak.
@@ -98,7 +98,7 @@
         \n5. Memberikan penjelasan tentang dampak perbuatan baik dan buruk.
         \n6. Menghargai setiap keberhasilan yang diperoleh anak.
     </string>
-    <string name="desc_permissive">Pola asuh ini merupakan pengasuhan tanpa penerapan disiplin pada anak.
+    <string name="desc_permissive">\t\tPola asuh ini merupakan pengasuhan tanpa penerapan disiplin pada anak.
         \n
         \nCiri - Ciri :
         \n1. Orang tua tidak menegur atau memperingatkan anak apabila anak sedang dalam bahaya dan sangat sedikit bimbingan yang diberikan oleh mereka.
@@ -122,4 +122,9 @@
         Namun, dalam jangka panjang, anak menjadi bingung karena tidak terbiasa dengan batasan yang ada</string>
     <string name="parenting_style_impact">Berikut dampak yang ditimbulkan oleh pola asuh ini:</string>
     <string name="go_premium">Konsultasi dengan psikolog untuk informasi selengkapnya</string>
+    <string name="desc_go_premium">Konseling dijamin efektif • Proses yang praktis • Biayanya terjangkau
+        \n\nBicarakan isi hatimu, dapatkan pencerahan atas masalahmu. Privasi dan kerahasiaanmu aman dalam lindungan Kode Etik Psikologi.
+        \n\n*Privasi dan kerahasiaanmu aman dalam lindungan Kode Etik Psikologi.
+        \n**Jaminan Efektivitas Konseling: Apabila konseling dengan kami ternyata tidak membantu, kami akan mengembalikan uangmu sepenuhnya.
+    </string>
 </resources>

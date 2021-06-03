@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.firebase.auth.FirebaseAuth
 import com.pinus.pakis.databinding.FragmentHomeBinding
+import com.pinus.pakis.ui.questions.QuestionActivity
 import com.pinus.pakis.ui.result.ResultActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -39,7 +40,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnKuisioner.setOnClickListener {
-            val intent = Intent(context, ResultActivity::class.java)
+            val intent = Intent(context, QuestionActivity::class.java)
             startActivity(intent)
         }
         binding.pullToRefresh.setOnRefreshListener {

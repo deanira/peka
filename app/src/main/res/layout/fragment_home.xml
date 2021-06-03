@@ -21,12 +21,12 @@
                 android:id="@+id/tv_welcome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_neue_light"
                 android:text="@string/selamat_datang"
                 android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:fontFamily="@font/helvetica_neue_light"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/text_home"
@@ -35,12 +35,26 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_welcome" />
+
+            <TextView
+                android:id="@+id/tv_reminder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/parenting_motivation_1"
+                android:textAlignment="center"
+                android:fontFamily="@font/helvetica_neue_light"
+                app:layout_constraintEnd_toEndOf="@id/text_home"
+                app:layout_constraintStart_toStartOf="@id/text_home"
+                app:layout_constraintTop_toBottomOf="@id/text_home" />
+
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cv_img_parenting"
@@ -51,7 +65,7 @@
                 app:cardCornerRadius="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_home">
+                app:layout_constraintTop_toBottomOf="@id/tv_reminder">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -89,12 +103,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
                 app:cardBackgroundColor="@color/cardview_dark_background"
                 app:cardCornerRadius="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginBottom="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_kuisioner">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -106,11 +120,11 @@
                         android:id="@+id/iv_quote_left"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:rotation="180"
                         android:src="@drawable/ic_baseline_format_quote_24"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/yellow"
-                        android:rotation="180"/>
+                        app:tint="@color/yellow" />
 
                     <ImageView
                         android:id="@+id/iv_quote_right"
@@ -119,31 +133,21 @@
                         android:src="@drawable/ic_baseline_format_quote_24"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/yellow"/>
+                        app:tint="@color/yellow" />
 
                     <TextView
                         android:id="@+id/tv_daily_motivation"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica_neue_light"
+                        android:lineSpacingMultiplier="1.2"
                         android:text="@string/daily_parenting_motivation"
+                        android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:justificationMode="inter_word"
+                        app:layout_constraintEnd_toStartOf="@id/iv_quote_right"
                         app:layout_constraintStart_toEndOf="@id/iv_quote_left"
-                        app:layout_constraintTop_toBottomOf="@id/iv_quote_left"
-                        app:layout_constraintEnd_toStartOf="@id/iv_quote_right"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginVertical="8dp"
-                        android:lineSpacingMultiplier="1.2"
-                        android:text="@string/parenting_motivation_1"
-                        android:textColor="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_daily_motivation" />
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
