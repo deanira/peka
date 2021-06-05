@@ -1,5 +1,7 @@
 package com.pinus.pakis.ui.dashboard.video
 
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,12 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.pakis.pinus.core.ui.VideoRecyclerAdapter
+import com.pakis.pinus.core.utils.ConnectivityReceiver
 import com.pinus.pakis.databinding.FragmentVideoBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class VideoFragment : Fragment() {
+class VideoFragment : Fragment(), ConnectivityReceiver.ConnectivityReceiverListener {
 
     private val videoViewModel: VideoViewModel by viewModels()
     private lateinit var videoAdapter: VideoRecyclerAdapter
@@ -22,7 +26,7 @@ class VideoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentVideoBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -39,7 +43,6 @@ class VideoFragment : Fragment() {
         videoAdapter = VideoRecyclerAdapter()
         videoViewModel.getVideos()
         videoViewModel.videos.observe(viewLifecycleOwner, {
-            Log.d("DATA VIDEORESPONSE", it.toString())
             videoAdapter.setData(it)
             binding.rvVideo.apply {
                 layoutManager =
@@ -54,8 +57,38 @@ class VideoFragment : Fragment() {
     private fun isLoading(state: Boolean) {
         if (state) {
             binding.progressCircular.visibility = View.VISIBLE
+            binding.tvNoInternet.visibility = View.VISIBLE
         } else {
             binding.progressCircular.visibility = View.INVISIBLE
+            binding.tvNoInternet.visibility = View.INVISIBLE
         }
+    }
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+        connectionChanged(isConnected)
+    }
+
+    private fun connectionChanged(isConnected: Boolean) {
+        if (!isConnected) {
+            isLoading(true)
+            Snackbar.make(
+                binding.root,
+                "No Internet Connection",
+                Snackbar.LENGTH_LONG
+            ).show()
+            binding.rvVideo.visibility = View.INVISIBLE
+        } else {
+            binding.rvVideo.visibility = View.VISIBLE
+            isLoading(false)
+            loadVideos()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().registerReceiver(
+            ConnectivityReceiver(),
+            IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        )
+        ConnectivityReceiver.connectivityReceiverListener = this
     }
 }

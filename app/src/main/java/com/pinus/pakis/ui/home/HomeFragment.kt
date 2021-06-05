@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.google.firebase.auth.FirebaseAuth
+import com.pakis.pinus.core.utils.ConnectivityReceiver
 import com.pinus.pakis.databinding.FragmentHomeBinding
 import com.pinus.pakis.ui.questions.QuestionActivity
 import com.pinus.pakis.ui.result.ResultActivity
@@ -57,8 +58,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun motivationView() {
-
-
         homeViewModel.getRandomMotivation()
         homeViewModel.motivation.observe(viewLifecycleOwner, { item ->
             val stringMotivation = arrayListOf<String>()
