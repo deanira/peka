@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.pinus.pakis">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:name=".BaseApplication"
         android:icon="@drawable/logo_peka"
@@ -41,6 +42,15 @@
             android:name=".ui.main.MainActivity"
             android:theme="@style/Theme.Pakis.NoActionBar" />
         <activity android:name=".ui.auth.SigninActivity" />
+        <receiver
+            android:name="com.pakis.pinus.core.utils.ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                    tools:ignore="BatteryLife" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

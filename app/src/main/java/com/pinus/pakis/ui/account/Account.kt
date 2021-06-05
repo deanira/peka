@@ -39,12 +39,12 @@ class Account : AppCompatActivity() {
         namaListener()
 
         binding.btnUbahPassword.setOnClickListener {
-            if (binding.etProfileEmailInput.text.toString()
-                    .trim() != email
-            ) {
-                isLoading(true)
-                changeEmail()
-            }
+//            if (binding.etProfileEmailInput.text.toString()
+//                    .trim() != email
+//            ) {
+//                isLoading(true)
+//                changeEmail()
+//            }
             if (binding.etProfileNameInput.text.toString()
                     .trim() != nama
             ) {

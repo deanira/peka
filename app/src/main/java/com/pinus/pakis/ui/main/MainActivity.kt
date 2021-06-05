@@ -1,6 +1,8 @@
 package com.pinus.pakis.ui.main
 
 import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -10,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.pakis.pinus.core.utils.ConnectivityReceiver
 import com.pinus.pakis.R
 import com.pinus.pakis.ui.auth.SignupSigninActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
