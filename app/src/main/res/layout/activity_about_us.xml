@@ -85,6 +85,7 @@
             app:cardBackgroundColor="@color/main_blue"
             app:cardCornerRadius="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:cardElevation="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_meet_the_team">
 
@@ -158,6 +159,7 @@
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/main_blue"
             app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cv_md">
@@ -233,6 +235,7 @@
             android:layout_marginBottom="20dp"
             app:cardBackgroundColor="@color/main_blue"
             app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
