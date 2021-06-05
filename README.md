@@ -16,7 +16,7 @@ This is the mobile development repository for B21-CAP0039 final project for Bang
 ## Documentation
 
 [Documentation](https://drive.google.com/drive/folders/1ahctqGAX3JCrBzOSpdr1PQocsYmN-A48?usp=sharing)
-[Screenshoots]
+[Screenshoots & Brief Demonstration]
 
 
   
